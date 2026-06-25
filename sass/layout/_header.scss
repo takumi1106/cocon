@@ -1,0 +1,5 @@
+@use '../foundation/var' as v;
+
+header {
+    color: v.$color-text;
+}

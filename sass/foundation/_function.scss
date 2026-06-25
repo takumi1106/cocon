@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 100)}em;
+}
