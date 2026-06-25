@@ -14,3 +14,13 @@
         font-size: 24px;
     }
 }
+
+.news{
+    &__inner{
+        @include m.inner();
+    }
+
+    &__title{
+        @include m.section-title();
+    }
+}

@@ -1,4 +1,6 @@
 @use "sass:math";
+@use '../foundation/function' as f;
+@use '../foundation/var' as v;
 $breakpoints: (
     "tablet": 768px,
     "desktop": 1024px
@@ -15,4 +17,11 @@ $breakpoints: (
     width: $w;
     margin-left: auto;
     margin-right: auto;
+}
+
+@mixin section-title{
+    font-size: f.rem(32);
+    font-family: 'Hiragino Mincho Pro';
+    font-weight: normal;
+    line-height: math.div(44,32);
 }

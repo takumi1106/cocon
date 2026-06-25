@@ -18,4 +18,15 @@ header {
 }
 .mainvisual__title {
   font-size: 24px;
+}
+
+.news__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news__title {
+  font-size: 32px;
+  font-family: "Hiragino Mincho Pro";
 }/*# sourceMappingURL=style.css.map */
