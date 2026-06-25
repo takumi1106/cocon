@@ -4,4 +4,18 @@
 /* Typography */
 header {
   color: #7D5542;
+}
+
+.mainvisual {
+  background: url(/images/dummy.webp) no-repeat center center;
+  background-size: cover;
+}
+.mainvisual__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainvisual__title {
+  font-size: 24px;
 }/*# sourceMappingURL=style.css.map */

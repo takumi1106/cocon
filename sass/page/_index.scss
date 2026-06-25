@@ -1,0 +1,16 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
+@use '../foundation/var' as v;
+
+.mainvisual{
+    background: url(/images/dummy.webp) no-repeat center center;
+    background-size: cover;
+
+    &__inner{
+        @include m.inner();
+    }
+
+    &__title{
+        font-size: 24px;
+    }
+}
