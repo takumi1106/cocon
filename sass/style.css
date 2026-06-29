@@ -159,14 +159,14 @@ body {
 
 .reserve-btn {
   position: fixed;
-  right: 0;
-  top: 90%;
+  right: -1px;
+  top: 85%;
   transform: translateY(-50%);
   z-index: 1000;
 }
 .reserve-btn img {
   display: block;
-  width: 9.75rem;
+  width: 8.4375rem;
 }
 
 .modal {

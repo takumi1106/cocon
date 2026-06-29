@@ -132,14 +132,14 @@ body{
 
 .reserve-btn {
     position: fixed;
-    right: 0;
-    top: 90%;
+    right: -1px;
+    top: 85%;
     transform: translateY(-50%);
     z-index: 1000;
 
     img {
         display: block;
-        width: f.rem(156); // 好きな大きさ
+        width: f.rem(135); // 好きな大きさ
     }
 }
 
