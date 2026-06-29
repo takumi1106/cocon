@@ -6,6 +6,8 @@ body{
 }
 
 .mainvisual{
+    height: f.rem(744);
+    padding: f.rem(400) 0 f.rem(300);
     background: url(/images/dummy.webp) no-repeat center center;
     background-size: cover;
 
@@ -26,10 +28,33 @@ body{
     &__title{
         @include m.section-title();
     }
+
+    &__post{
+        margin-bottom: f.rem(30);
+        padding-bottom: f.rem(10);
+        border-bottom: solid v.$color-line 1px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        dt{
+            font-size: f.rem(12);
+            margin-bottom: f.rem(10);
+        }
+
+        dd{
+            font-size: f.rem(14);
+        }
+    }
+
+    &__btn{
+        @include m.btn();
+    }
 }
 
 .menu {
-    padding: 80px 0;
+    padding: f.rem(80) 0;
 
     &__inner {
         position: relative;
@@ -44,8 +69,8 @@ body{
         display: flex;
         overflow: hidden;
         scroll-behavior: smooth;
-        gap: 32px;
-        width: 200px;
+        gap: f.rem(32);
+        width: f.rem(200);
         margin: 0 auto;
     }
 
@@ -60,8 +85,8 @@ body{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
+        width: f.rem(48);
+        height: f.rem(48);
         border: none;
         border-radius: 50%;
         background: #d9d9d9;
@@ -69,11 +94,11 @@ body{
     }
 
     &__prev {
-        left: -24px;
+        left: f.rem(-24);
     }
 
     &__next {
-        right: -24px;
+        right: f.rem(-24);
     }
 
     &__btn{
