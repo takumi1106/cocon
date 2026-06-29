@@ -24,4 +24,12 @@ $breakpoints: (
     font-family: 'Hiragino Mincho Pro';
     font-weight: normal;
     line-height: math.div(44,32);
+    margin-bottom: f.rem(70);
+}
+
+@mixin btn {
+    display: block;
+    width: fit-content;
+    margin-top: f.rem(70);
+    margin-left: auto;
 }

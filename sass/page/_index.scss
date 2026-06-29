@@ -1,6 +1,9 @@
 @use '../foundation/mixin' as m;
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
+body{
+    color: v.$color-text;
+}
 
 .mainvisual{
     background: url(/images/dummy.webp) no-repeat center center;
@@ -22,5 +25,99 @@
 
     &__title{
         @include m.section-title();
+    }
+}
+
+.menu {
+    padding: 80px 0;
+
+    &__inner {
+        position: relative;
+        @include m.inner();
+    }
+
+    &__title {
+        @include m.section-title();
+    }
+
+    &__slider {
+        display: flex;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        gap: 32px;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    &__slider img {
+        flex-shrink: 0;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: #d9d9d9;
+        cursor: pointer;
+    }
+
+    &__prev {
+        left: -24px;
+    }
+
+    &__next {
+        right: -24px;
+    }
+
+    &__btn{
+        @include m.btn();
+    }
+}
+
+.insta{
+    &__inner{
+        @include m.inner();
+    }
+
+    &__title{
+        @include m.section-title();
+    }
+
+    &__img{
+        display: grid;
+        grid-template-columns: repeat(2,f.rem(150));
+        justify-content: center;
+        gap: f.rem(30);
+    }
+
+    &__btn{
+        @include m.btn();
+    }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        display: flex;
+    }
+
+    &__image {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
     }
 }
