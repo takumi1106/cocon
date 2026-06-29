@@ -1,5 +1,13 @@
 @use '../foundation/var' as v;
 
 header {
-    color: v.$color-text;
+    color: v.$color-main;
+
+    &__inner {
+        @include m.inner();
+    }
+
+    &__logo {
+        width: rem(150);
+    }
 }
