@@ -3,20 +3,23 @@
 @use '../foundation/var' as v;
 body{
     color: v.$color-text;
+    background-color: v.$color-back;
 }
 
 .mainvisual{
     height: f.rem(744);
     padding: f.rem(400) 0 f.rem(300);
-    background: url(/images/dummy.webp) no-repeat center center;
+    background: url(/images/mainvisual.webp) no-repeat center center;
     background-size: cover;
+    margin-bottom: f.rem(150);
 
     &__inner{
         @include m.inner();
     }
 
     &__title{
-        font-size: 24px;
+        font-size: f.rem(24);
+        color: v.$color-base;
     }
 }
 
@@ -124,6 +127,19 @@ body{
 
     &__btn{
         @include m.btn();
+    }
+}
+
+.reserve-btn {
+    position: fixed;
+    right: 0;
+    top: 90%;
+    transform: translateY(-50%);
+    z-index: 1000;
+
+    img {
+        display: block;
+        width: f.rem(156); // 好きな大きさ
     }
 }
 
