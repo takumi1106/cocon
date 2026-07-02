@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*　colors */
 /* size */
 /* Typography */
@@ -18,12 +19,14 @@ body {
   background-size: cover;
   margin-bottom: 9.375rem;
 }
+
 .mainvisual__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .mainvisual__title {
   font-size: 1.5rem;
   color: #ffffff;
@@ -35,6 +38,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .news__title {
   font-size: 2rem;
   font-family: "Hiragino Mincho Pro";
@@ -42,21 +46,26 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+
 .news__post {
   margin-bottom: 1.875rem;
   padding-bottom: 0.625rem;
   border-bottom: solid #FFE9DA 1px;
 }
+
 .news__post:last-of-type {
   margin-bottom: 0;
 }
+
 .news__post dt {
   font-size: 0.75rem;
   margin-bottom: 0.625rem;
 }
+
 .news__post dd {
   font-size: 0.875rem;
 }
+
 .news__btn {
   display: block;
   width: -moz-fit-content;
@@ -68,6 +77,7 @@ body {
 .menu {
   padding: 5rem 0;
 }
+
 .menu__inner {
   position: relative;
   max-width: 1000px;
@@ -75,6 +85,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .menu__title {
   font-size: 2rem;
   font-family: "Hiragino Mincho Pro";
@@ -82,6 +93,7 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+
 .menu__slider {
   display: flex;
   overflow: hidden;
@@ -90,12 +102,15 @@ body {
   width: 12.5rem;
   margin: 0 auto;
 }
+
 .menu__slider img {
   flex-shrink: 0;
   width: 200px;
   border-radius: 10px;
 }
-.menu__prev, .menu__next {
+
+.menu__prev,
+.menu__next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -106,12 +121,15 @@ body {
   background: #d9d9d9;
   cursor: pointer;
 }
+
 .menu__prev {
   left: -1.5rem;
 }
+
 .menu__next {
   right: -1.5rem;
 }
+
 .menu__btn {
   display: block;
   width: -moz-fit-content;
@@ -126,6 +144,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .insta__title {
   font-size: 2rem;
   font-family: "Hiragino Mincho Pro";
@@ -133,12 +152,14 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+
 .insta__img {
   display: grid;
   grid-template-columns: repeat(2, 9.375rem);
   justify-content: center;
   gap: 1.875rem;
 }
+
 .insta__btn {
   display: block;
   width: -moz-fit-content;
@@ -154,6 +175,7 @@ body {
   transform: translateY(-50%);
   z-index: 1000;
 }
+
 .reserve-btn img {
   display: block;
   width: 8.4375rem;
@@ -167,11 +189,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .modal.active {
   display: flex;
 }
+
 .modal__image {
   max-width: 80%;
   max-height: 80%;
   border-radius: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
