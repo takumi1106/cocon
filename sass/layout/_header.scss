@@ -1,3 +1,5 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
 @use '../foundation/var' as v;
 
 header {
@@ -8,6 +10,6 @@ header {
     }
 
     &__logo {
-        width: rem(150);
+        width: f.rem(150);
     }
 }
