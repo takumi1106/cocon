@@ -1,9 +1,12 @@
 @use '../foundation/function' as f;
 @use '../foundation/mixin' as m;
 @use '../foundation/var' as v;
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
 
-header {
+.header {
     color: v.$color-main;
+    padding: f.rem(20);
 
     &__inner {
         @include m.inner();
