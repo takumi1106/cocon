@@ -2,8 +2,18 @@
 /*　colors */
 /* size */
 /* Typography */
-header {
-  color: #7D5542;
+.header {
+  color: #FBF0E3;
+  padding: 1.25rem;
+}
+.header__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__logo {
+  width: 9.375rem;
 }
 
 body {
