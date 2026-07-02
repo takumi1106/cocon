@@ -2,8 +2,9 @@
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
 
-header {
+.header {
     color: v.$color-main;
+    padding: f.rem(20);
 
     &__inner {
         @include m.inner();
