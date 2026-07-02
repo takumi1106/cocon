@@ -24,6 +24,7 @@ header__logo {
   margin: 0 auto;
 }
 .footer__access {
+  padding: 100px 0;
   margin: 80px auto;
   background: #f7efe6;
   display: flex;
