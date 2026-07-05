@@ -1,0 +1,33 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
+
+.sub-title {
+    @include m.section-title();
+}
+
+.news{
+    &__inner{
+        @include m.inner();
+    }
+
+    &__text{
+        margin-bottom: f.rem(70);
+
+        p{
+            margin-bottom: f.rem(24);
+
+            &:last-child {
+                    margin-bottom: 0;
+                }
+        }
+
+        &__img{
+            img{
+                width: f.rem(300);
+                height: f.rem(200);
+                aspect-ratio: 3/2;
+                margin: 0 auto 0;
+            }
+        }
+    }
+}

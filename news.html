@@ -13,9 +13,37 @@
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo"><a href="index.html"><img src="./images/cocon_logo.webp" alt="ロゴ"></a></h1>
-            <nav class="header_nav"></nav>
+            <button class="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="about.html">coconについて</a></li>
+                    <li><a href="menu.html">メニュー</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
+    <main class="main">
+        <section class="news">
+            <div class="news__inner">
+                <h2 class="news__title sub-title">西山商店街夏祭りマルシェに参加します！</h2>
+                <div class="news__text">
+                    <p>このたび、8月25日に開催される「西山商店街夏祭りマルシェ」 に参加させていただくことになりました！</p>
+                    <p>当日は、わんちゃんとの暮らしがもっと楽しくなる愛犬グッズや、愛犬と一緒に楽しめるおやつをご用意してお待ちしております。</p>
+                    <p>イヌノビヨウシツのほかにも、魅力あふれる出店者さまがたくさん集まる楽しいイベントです。お買い物やお散歩のついでに、ぜひお気軽にお立ち寄りください。</p>
+                    <p>皆さまやわんちゃんにお会いできることを楽しみにしております。ぜひ遊びに来てくださいね！🐾✨</p>
+                </div>
+                <div class="news__img">
+                    <img src="./images/news_img.webp" alt="記事の写真">
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__access">
@@ -67,6 +95,14 @@
             </div>
         </div>
     </footer>
+    </main>
+    <a href="#" class="reserve-btn">
+        <img src="./images/btn.webp" alt="ご予約はこちら">
+    </a>
+    <div class="modal">
+        <img class="modal__image" src="" alt="">
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
