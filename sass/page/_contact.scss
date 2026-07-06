@@ -1,0 +1,8 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
+@use '../foundation/var' as v;
+
+.lein-btn {
+    margin: 250px auto 150px auto;
+    text-align: center;
+}
