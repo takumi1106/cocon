@@ -101,14 +101,16 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__access">
+        <div class="footer__access">
+            <div class="footer__inner" style="display:flex; gap:120px; ">
                 <div class="footer__map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.033648210786!2d136.99188517576448!3d35.15578157276141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600365924c1def3b%3A0x1b5dafada426e291!2z44Kk44OM44OO44OT44Oo44Km44K344OEIGNvY29u!5e0!3m2!1sja!2sjp!4v1782367051480!5m2!1sja!2sjp"
-                            title="Googleマップ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                        title="Googleマップ" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" width="500px"
+                        height="500px">
                     </iframe>
                 </div>
+
                 <dl class="footer__info">
                     <dt>住所</dt>
                     <dd>名古屋市名東区西山本通2-16 202</dd>
@@ -126,20 +128,42 @@
                     <dd>地下鉄東山線 ○○駅から徒歩○分</dd>
                 </dl>
             </div>
-            <div class="footer__bottom">
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__inner">
                 <div class="footer__content">
                     <div class="footer__logo">
                         <img src="./images/cocon_logo.png" alt="">
                     </div>
+
                     <nav class="footer__nav">
                         <ul class="footer__list">
-                            <li>coconについて</li>
-                            <li>メニュー</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li><a href="./index.html">ホーム</a></li>
+                            <li><a href="./about.html">coconについて</a></li>
+                            <li><a href="./menu.html">メニュー</a></li>
+                            <li><a href="./contact.html">お問い合わせ</a></li>
                         </ul>
                     </nav>
+
+                    <dl class="footer__company">
+                        <dt>第一種動物取扱業種別</dt>
+                        <dd>保管</dd>
+
+                        <dt>登録番号</dt>
+                        <dd>第051327号</dd>
+
+                        <dt>登録年月日</dt>
+                        <dd>令和5年6月15日</dd>
+
+                        <dt>有効期限の末日</dt>
+                        <dd>令和10年6月14日</dd>
+
+                        <dt>動物取扱責任者</dt>
+                        <dd>宮崎彩乃</dd>
+
+                        <dt>所在地</dt>
+                        <dd>名古屋市名東区<br>西山本通2-16 202</dd>
+                    </dl>
                 </div>
 
                 <div class="footer__sns">
@@ -147,7 +171,7 @@
                     <a href=""><img src="" alt=""></a>
                 </div>
 
-                <small class="footer__copy">&copy;</small>
+                <small class="footer__copy">&copy;@cocon</small>
             </div>
         </div>
     </footer>
