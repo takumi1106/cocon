@@ -59,7 +59,7 @@
             display: flex;
             flex-direction: column;
 
-            gap: f.rem(40);
+            gap: f.rem(20);
 
             padding: 0;
             margin: 0;
@@ -80,9 +80,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-
-                gap: f.rem(8);
-
             }
 
         }
@@ -124,7 +121,6 @@
 
     width: f.rem(40);
     height: f.rem(40);
-
     background: none;
     border: none;
 
@@ -149,26 +145,16 @@
     }
 
     &__paw {
-
         position: absolute;
-
         inset: 0;
-
         margin: auto;
-
         width: 100%;
         height: 100%;
-
         object-fit: contain;
-
         opacity: 0;
-
         transform: scale(.5);
-
         transition: .4s;
-
         pointer-events: none;
-
     }
 
     &.active {
@@ -192,75 +178,91 @@
 }
 
 .paw {
-    position: relative;
 
-    width: f.rem(110);
-    height: f.rem(40);
+    position: relative;
+    height: f.rem(22);
 
     flex-shrink: 0;
 
     img {
-        position: absolute;
 
-        width: f.rem(22);
+        position: absolute;
+        width: f.rem(12);
 
         opacity: 0;
+        transform: scale(.8);
 
         transition:
-            opacity .3s ease,
-            transform .3s ease;
+            opacity .25s ease,
+            transform .25s ease;
 
-        transform: scale(.8);
     }
 
-    img:nth-child(1) {
-        left: 0;
-        top: f.rem(18);
+    // ジグザグ
+    img:nth-child(odd) {
+        top: f.rem(6);
     }
 
-    img:nth-child(2) {
-        left: f.rem(28);
+    img:nth-child(even) {
         top: 0;
     }
 
-    img:nth-child(3) {
-        left: f.rem(58);
-        top: f.rem(18);
+    // 横位置
+    @for $i from 1 through 10 {
+
+        img:nth-child(#{$i}) {
+            left: #{($i - 1) * 16}px;
+        }
+
     }
 
-    img:nth-child(4) {
-        left: f.rem(88);
-        top: 0;
-    }
 }
 
-.header_nav__list a:hover {
+// 足跡数ごとの幅
 
-    .paw {
+.paw--5 .paw {
+    width: f.rem(76);
+}
 
-        img:nth-child(1) {
+.paw--6 .paw {
+    width: f.rem(92);
+}
+
+.paw--9 .paw {
+    width: f.rem(140);
+}
+
+.paw--10 .paw {
+    width: f.rem(156);
+}
+
+@for $i from 1 through 10 {
+
+    .header_nav__list a:hover .paw img:nth-child(#{$i}) {
+
+        @if $i ==1 {
             opacity: .6;
-            transform: scale(1);
-            transition-delay: 0s;
         }
 
-        img:nth-child(2) {
+        @else if $i ==2 {
+            opacity: .7;
+        }
+
+        @else if $i ==3 {
             opacity: .8;
-            transform: scale(1);
-            transition-delay: .08s;
         }
 
-        img:nth-child(3) {
-            opacity: 1;
-            transform: scale(1);
-            transition-delay: .16s;
+        @else if $i ==4 {
+            opacity: .9;
         }
 
-        img:nth-child(4) {
+        @else {
             opacity: 1;
-            transform: scale(1);
-            transition-delay: .24s;
         }
+
+        transform: scale(1);
+
+        transition-delay: #{($i - 1) * .06}s;
 
     }
 
