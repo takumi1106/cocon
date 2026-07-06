@@ -1,38 +1,40 @@
 @use '../foundation/mixin' as m;
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
-body{
+
+body {
     color: v.$color-text;
     background-color: v.$color-back;
 }
 
-.mainvisual{
+.mainvisual {
     height: f.rem(744);
     padding: f.rem(400) 0 f.rem(300);
     background: url(/images/mainvisual.webp) no-repeat center center;
     background-size: cover;
     margin-bottom: f.rem(150);
+    margin: f.rem(80) auto;
 
-    &__inner{
+    &__inner {
         @include m.inner();
     }
 
-    &__title{
+    &__title {
         font-size: f.rem(24);
         color: v.$color-base;
     }
 }
 
-.news{
-    &__inner{
+.news {
+    &__inner {
         @include m.inner();
     }
 
-    &__title{
+    &__title {
         @include m.section-title();
     }
 
-    &__post{
+    &__post {
         margin-bottom: f.rem(30);
         padding-bottom: f.rem(10);
         border-bottom: solid v.$color-line 1px;
@@ -41,17 +43,17 @@ body{
             margin-bottom: 0;
         }
 
-        dt{
+        dt {
             font-size: f.rem(12);
             margin-bottom: f.rem(10);
         }
 
-        dd{
+        dd {
             font-size: f.rem(14);
         }
     }
 
-    &__btn{
+    &__btn {
         @include m.btn();
     }
 }
@@ -104,28 +106,28 @@ body{
         right: f.rem(-24);
     }
 
-    &__btn{
+    &__btn {
         @include m.btn();
     }
 }
 
-.insta{
-    &__inner{
+.insta {
+    &__inner {
         @include m.inner();
     }
 
-    &__title{
+    &__title {
         @include m.section-title();
     }
 
-    &__img{
+    &__img {
         display: grid;
-        grid-template-columns: repeat(2,f.rem(150));
+        grid-template-columns: repeat(2, f.rem(150));
         justify-content: center;
         gap: f.rem(30);
     }
 
-    &__btn{
+    &__btn {
         @include m.btn();
     }
 }
