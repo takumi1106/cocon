@@ -119,3 +119,77 @@ $color-main: #FBF0E3;
         letter-spacing: .1em;
     }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: "Yu Mincho", "YuMincho", serif;
+}
+
+.contact {
+    width: 72%;
+    margin: 60px auto 250px auto;
+}
+
+.contact h2 {
+    color: #8a5b3f;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f5eadb;
+    padding: 18px 20px;
+    font-size: 18px;
+    color: #8a5b3f;
+    font-family: inherit;
+}
+
+input {
+    height: 60px;
+}
+
+textarea {
+    height: 180px;
+    resize: none;
+    padding-top: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8a5b3f;
+}
+
+button {
+    text-align: center;
+    width: 120px;
+    height: 45px;
+    margin: 0 auto;
+    border: none;
+    background: #f5eadb;
+    color: #8a5b3f;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e8d7c3;
+}
