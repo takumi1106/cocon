@@ -1,0 +1,22 @@
+@use '../foundation/mixin' as m;
+// @use '../foundation/function' as f;
+
+.sub-title{
+    @include m.section-title();
+}
+
+.qs-box{
+    @include m.ques();
+}
+
+.menu{
+    &__inner{
+        @include m.inner();
+    }
+}
+
+.ques{
+    &__inner{
+        @include m.inner();
+    }
+}
