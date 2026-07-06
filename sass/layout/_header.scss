@@ -198,7 +198,6 @@
 
     }
 
-    // ジグザグ
     img:nth-child(odd) {
         top: f.rem(6);
     }
@@ -217,8 +216,6 @@
     }
 
 }
-
-// 足跡数ごとの幅
 
 .paw--5 .paw {
     width: f.rem(76);
