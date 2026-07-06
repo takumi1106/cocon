@@ -1,0 +1,34 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
+// @use '../foundation/function' as f;
+
+.sub-title{
+    @include m.section-title();
+}
+
+.qs-box{
+    @include m.ques();
+}
+
+.menu{
+    &__inner{
+        @include m.inner();
+    }
+}
+
+.ques{
+    &__inner{
+        @include m.inner();
+    }
+
+        .ques__box {
+            position: relative;
+        }
+
+        .ques__icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: f.rem(30);
+        }
+}
