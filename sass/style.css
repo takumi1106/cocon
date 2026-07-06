@@ -652,6 +652,7 @@ body {
 .qs-box h3 {
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
+  width: 22.5rem;
 }
 .qs-box h3::before {
   content: "Q";
@@ -684,6 +685,15 @@ body {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+.ques .ques__box {
+  position: relative;
+}
+.ques .ques__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.875rem;
 }
 
 .sub-title {

@@ -1,4 +1,5 @@
 @use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
 // @use '../foundation/function' as f;
 
 .sub-title{
@@ -19,4 +20,15 @@
     &__inner{
         @include m.inner();
     }
+
+        .ques__box {
+            position: relative;
+        }
+
+        .ques__icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: f.rem(30);
+        }
 }

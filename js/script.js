@@ -45,3 +45,15 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   nav.classList.toggle("active");
 });
+
+//menu.html
+const toggles = document.querySelectorAll(".ques__toggle");
+
+toggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const box = toggle.closest(".ques__box");
+    const answer = box.querySelector(".ques__answer");
+
+    answer.hidden = !answer.hidden;
+  });
+});
