@@ -17,20 +17,22 @@
 }
 
 .footer {
-  color: #9b6c4b;
+  padding: 100px 0 60px;
 }
 .footer__inner {
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
-  align-items: center;
-}
-.footer {
-  /* ---------- アクセス ---------- */
 }
 .footer__access {
-  background: #f7efe5;
-  padding: 80px 0;
+  padding: 100px 0;
+  margin: 80px auto;
+  background: #f7efe6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 120px;
+  margin-bottom: 100px;
 }
 .footer__map {
   flex-shrink: 0;
@@ -39,157 +41,71 @@
   display: block;
   width: 500px;
   height: 500px;
-  border: 0;
+  border: none;
 }
-.footer .footer__info {
+.footer__info {
   display: grid;
-  height: 300px;
   grid-template-columns: 120px 1fr;
-  align-items: center;
-  row-gap: 2px;
+  row-gap: 30px;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  color: #8d674d;
+  font-size: 20px;
+  line-height: 1.8;
 }
-.footer .footer__info dt,
-.footer .footer__info dd {
+.footer__info dt {
+  font-weight: normal;
+}
+.footer__info dd {
   margin: 0;
-  line-height: 0.5;
-}
-.footer {
-  /* ---------- 下フッター ---------- */
 }
 .footer__bottom {
-  padding: 150px 0 40px;
+  border-top: 1px solid #d7c6b6;
+  padding-top: 50px;
 }
 .footer__content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 150px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .footer__logo img {
-  width: 220px;
+  width: 180px;
   display: block;
 }
-.footer__nav {
-  margin-top: 20px;
-}
 .footer__list {
+  display: flex;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .footer__list li {
-  color: #9b6c4b;
+  color: #8d674d;
   font-size: 18px;
-  line-height: 3;
+  cursor: pointer;
 }
-.footer__company {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 18px 20px;
-  font-size: 16px;
-  line-height: 1.8;
-}
-.footer__company dt,
-.footer__company dd {
-  margin: 0;
+.footer__list li:hover {
+  opacity: 0.7;
 }
 .footer__sns {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+.footer__sns a {
+  display: block;
 }
 .footer__sns img {
-  width: 55px;
+  width: 32px;
   display: block;
 }
 .footer__copy {
   display: block;
   text-align: center;
-  color: #9b6c4b;
+  color: #8d674d;
   font-size: 14px;
-  letter-spacing: 0.1em;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #000;
-  font-family: "Yu Mincho", "YuMincho", serif;
-}
-
-.contact {
-  width: 72%;
-  margin: 60px auto 250px auto;
-}
-
-.contact h2 {
-  color: #8a5b3f;
-  font-size: 40px;
-  font-weight: normal;
-  margin-bottom: 50px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-input,
-textarea {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: #f5eadb;
-  padding: 18px 20px;
-  font-size: 18px;
-  color: #8a5b3f;
-  font-family: inherit;
-}
-
-input {
-  height: 60px;
-}
-
-textarea {
-  height: 180px;
-  resize: none;
-  padding-top: 20px;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #8a5b3f;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #8a5b3f;
-}
-
-button {
-  text-align: center;
-  width: 120px;
-  height: 45px;
-  margin: 0 auto;
-  border: none;
-  background: #f5eadb;
-  color: #8a5b3f;
-  font-size: 18px;
-  font-family: inherit;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #e8d7c3;
 }
 
 body {
@@ -362,7 +278,139 @@ body {
   border-radius: 10px;
 }
 
-.lein-btn {
-  margin: 250px auto 150px auto;
-  text-align: center;
+.sub-title {
+  font-size: 2rem;
+  font-family: "Hiragino Mincho Pro";
+  font-weight: normal;
+  line-height: 1.375;
+  margin-bottom: 4.375rem;
+}
+
+.shop {
+  margin-bottom: 5rem;
+}
+.shop__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shop__text {
+  margin-bottom: 3.125rem;
+}
+.shop__text p {
+  margin-bottom: 1.5rem;
+}
+.shop__text p:last-child {
+  margin-bottom: 0;
+}
+.shop__picture img {
+  width: 300px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.owner {
+  margin-bottom: 5rem;
+}
+.owner__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.owner__text {
+  margin-bottom: 3.125rem;
+}
+.owner__text p {
+  margin-bottom: 1.5rem;
+}
+.owner__picture img {
+  width: 290px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cameraman {
+  margin-bottom: 5rem;
+}
+.cameraman__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cameraman__text {
+  margin-bottom: 3.125rem;
+}
+.cameraman__picture img {
+  width: 220px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.illustrator {
+  margin-bottom: 5rem;
+}
+.illustrator__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.illustrator__text {
+  margin-bottom: 3.125rem;
+}
+.illustrator__picture img {
+  width: 290px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.event {
+  background-color: #AADCDD;
+  padding: 3.125rem 0 5rem;
+  text-align: right;
+}
+.event__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.event__title {
+  margin-bottom: 3.125rem;
+}
+
+.sub-title {
+  font-size: 2rem;
+  font-family: "Hiragino Mincho Pro";
+  font-weight: normal;
+  line-height: 1.375;
+  margin-bottom: 4.375rem;
+}
+
+.news__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news__text {
+  margin-bottom: 4.375rem;
+}
+.news__text p {
+  margin-bottom: 1.5rem;
+}
+.news__text p:last-child {
+  margin-bottom: 0;
+}
+.news__text__img img {
+  width: 18.75rem;
+  height: 12.5rem;
+  aspect-ratio: 3/2;
 }/*# sourceMappingURL=style.css.map */
