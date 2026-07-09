@@ -31,28 +31,49 @@
     </header>
     <main>
         <div class="lein-btn">
-            <a href="lin.ee/wwibL0V"><img src="./images/yoyaku.svg" alt="ライン登録" width="998px" height="336px"></a>
+            <a href="https://lin.ee/9jmTs20"><img src="./images/yoyaku.svg" alt="ライン登録" width="998px"
+                    height="336px"></a>
         </div>
 
         <section class="contact">
 
             <h2>お問い合わせ</h2>
 
-            <form>
+            <form action="#" method="post">
 
-                <input type="text" placeholder="お名前">
+                <div class="contact__item">
+                    <label for="name">お名前<span>*</span></label>
+                    <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+                </div>
 
-                <input type="email" placeholder="メールアドレス">
+                <div class="contact__item">
+                    <label for="email">メールアドレス<span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="sample@example.com" required>
+                </div>
 
-                <input type="tel" placeholder="電話番号">
+                <div class="contact__item">
+                    <label for="tel">電話番号</label>
+                    <input type="tel" id="tel" name="tel" placeholder="090-○□○□-◯△○△">
+                </div>
 
-                <input type="text" placeholder="犬種">
+                <div class="contact__item">
+                    <label for="breed">犬種</label>
+                    <input type="text" id="breed" name="breed" placeholder="トイプードル">
+                </div>
 
-                <input type="text" placeholder="コース">
+                <div class="contact__item">
+                    <label for="course">ご希望のコース</label>
+                    <input type="text" id="course" name="course" placeholder="シャンプーコース">
+                </div>
 
-                <textarea placeholder="お問い合わせ内容"></textarea>
+                <div class="contact__item">
+                    <label for="message">お問い合わせ内容<span>*</span></label>
+                    <textarea id="message" name="message" placeholder="お問い合わせ内容をご入力ください。" required></textarea>
+                </div>
 
-                <button type="submit">送信する</button>
+                <button class="contact__btn" type="submit">
+                    送信する
+                </button>
 
             </form>
 
@@ -80,28 +101,31 @@
                     <dd>毎週（金）／その他 不定休あり</dd>
 
                     <dt>駐車場</dt>
-                    <dd>○台あり</dd>
+                    <dd>西山商店街有料パーキング有り</dd>
 
                     <dt>最寄り駅</dt>
-                    <dd>地下鉄東山線 ○○駅から徒歩○分</dd>
+                    <dd>地下鉄東山線 星ヶ丘駅から徒歩15分</dd>
                 </dl>
             </div>
         </div>
         <div class="footer__bottom">
             <div class="footer__inner">
                 <div class="footer__content">
-                    <div class="footer__logo">
-                        <img src="./images/cocon_logo.png" alt="">
-                    </div>
 
-                    <nav class="footer__nav">
-                        <ul class="footer__list">
-                            <li><a href="./index.html">ホーム</a></li>
-                            <li><a href="./about.html">coconについて</a></li>
-                            <li><a href="./menu.html">メニュー</a></li>
-                            <li><a href="./contact.html">お問い合わせ</a></li>
-                        </ul>
-                    </nav>
+                    <div class="footer__menu">
+                        <div class="footer__logo">
+                            <img src="./images/cocon_logo.webp" alt="">
+                        </div>
+
+                        <nav class="footer__nav">
+                            <ul class="footer__list">
+                                <li><a href="./index.html">ホーム</a></li>
+                                <li><a href="./about.html">coconについて</a></li>
+                                <li><a href="./menu.html">メニュー</a></li>
+                                <li><a href="./contact.html">お問い合わせ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
                     <dl class="footer__company">
                         <dt>第一種動物取扱業種別</dt>
@@ -124,13 +148,16 @@
                     </dl>
                 </div>
 
-                <div class="footer__sns">
-                    <a href=""><img src="" alt=""></a>
-                    <a href=""><img src="" alt=""></a>
-                </div>
-
-                <small class="footer__copy">&copy;@cocon</small>
             </div>
+
+            <div class="footer__sns">
+                <a href="https://lin.ee/9jmTs20"><img src="./images/LINE_Brand_icon.png" alt="ライン"></a>
+                <a href="https://www.instagram.com/groomer_cocon/"><img src="./images/Instagram_Glyph_Gradient.png"
+                        alt="インスタ"></a>
+            </div>
+
+            <small class="footer__copy">&copy;イヌノビヨウシツ@cocon</small>
+        </div>
         </div>
     </footer>
 </body>

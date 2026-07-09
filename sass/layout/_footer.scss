@@ -2,9 +2,10 @@
 @use '../foundation/var' as v;
 $color-text: #7D5542;
 $color-main: #FBF0E3;
+$color-back: #9b6c4b;
 
 .footer {
-    color: #9b6c4b;
+    color: $color-back;
 
     &__inner {
         width: 1200px;
@@ -13,10 +14,9 @@ $color-main: #FBF0E3;
         align-items: center;
     }
 
-    /* ---------- アクセス ---------- */
-
     &__access {
-        background: #f7efe5;
+        margin-top: 200px;
+        background: $color-main;
         padding: 80px 0;
     }
 
@@ -31,12 +31,12 @@ $color-main: #FBF0E3;
         }
     }
 
-    .footer__info {
+    &__info {
         display: grid;
         height: 300px;
         grid-template-columns: 120px 1fr;
-        align-items: center;
-        row-gap: 2px; // 行と行の間隔
+        align-items: start;
+        row-gap: 10px;
         column-gap: 20px;
         dt,
 
@@ -48,8 +48,6 @@ $color-main: #FBF0E3;
         }
 
     }
-
-    /* ---------- 下フッター ---------- */
 
     &__bottom {
         padding: 150px 0 40px;
@@ -80,7 +78,7 @@ $color-main: #FBF0E3;
         padding: 0;
 
         li {
-            color: #9b6c4b;
+            color: $color-back;
             font-size: 18px;
             line-height: 3;
         }
@@ -114,82 +112,96 @@ $color-main: #FBF0E3;
     &__copy {
         display: block;
         text-align: center;
-        color: #9b6c4b;
+        color: $color-back;
         font-size: 14px;
         letter-spacing: .1em;
     }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@media (max-width: 767px) {
 
-body {
-    background: #000;
-    font-family: "Yu Mincho", "YuMincho", serif;
-}
+    .footer {
 
-.contact {
-    width: 72%;
-    margin: 60px auto 250px auto;
-}
+        &__access {
+            padding: 60px 0;
+        }
 
-.contact h2 {
-    color: #8a5b3f;
-    font-size: 40px;
-    font-weight: normal;
-    margin-bottom: 50px;
-}
+        &__inner {
+            display: block !important;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+        &__map {
+            margin-bottom: 40px;
+            text-align: center;
 
-input,
-textarea {
-    width: 100%;
-    border: none;
-    outline: none;
-    background: #f5eadb;
-    padding: 18px 20px;
-    font-size: 18px;
-    color: #8a5b3f;
-    font-family: inherit;
-}
+            iframe {
+                width: 350px;
+                height: 350px;
+            }
+        }
 
-input {
-    height: 60px;
-}
+        &__info {
+            width: 88%;
+            margin: 0 auto;
 
-textarea {
-    height: 180px;
-    resize: none;
-    padding-top: 20px;
-}
+            dt,
+            dd {
+                font-size: 15px;
+                line-height: 2;
+            }
 
-input::placeholder,
-textarea::placeholder {
-    color: #8a5b3f;
-}
+            dt {
+                width: 90px;
+            }
+        }
 
-button {
-    text-align: center;
-    width: 120px;
-    height: 45px;
-    margin: 0 auto;
-    border: none;
-    background: #f5eadb;
-    color: #8a5b3f;
-    font-size: 18px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        &__bottom {
+            padding: 60px 0;
+        }
 
-button:hover {
-    background: #e8d7c3;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            text-align: center;
+        }
+
+        &__logo img {
+            width: 120px;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__company {
+            text-align: left;
+
+            dt,
+            dd {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+        }
+
+        &__sns {
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+
+            img {
+                width: 42px;
+            }
+        }
+
+        &__copy {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+    }
 }
