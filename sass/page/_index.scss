@@ -155,20 +155,18 @@ body {
 .reserve-btn {
     position: fixed;
     right: 0;
-    bottom: f.rem(20);
+    bottom: 0;
 
     width: f.rem(160);
     height: f.rem(96);
 
-    background-color: #8b5f4a;
-    color: #fffaf2;
+    background-color: v.$color-text;
+    color: v.$color-main;
     text-decoration: none;
     overflow: hidden;
     z-index: 1000;
 
     @include m.mq(desktop) {
-        bottom: 0;
-
         width: f.rem(200);
         height: f.rem(120);
     }
