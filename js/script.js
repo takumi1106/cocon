@@ -57,3 +57,23 @@ toggles.forEach((toggle) => {
     answer.hidden = !answer.hidden;
   });
 });
+
+// FAQ一覧を開閉
+const openBtn = document.querySelector(".ques__open");
+const wrapper = document.querySelector(".ques__wrapper");
+
+openBtn.addEventListener("click", () => {
+  wrapper.hidden = !wrapper.hidden;
+});
+
+// 各質問を開閉
+const toggle = document.querySelectorAll(".ques__toggle");
+
+toggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const box = toggle.closest(".ques__box");
+    const answer = box.querySelector(".ques__answer");
+
+    answer.hidden = !answer.hidden;
+  });
+});

@@ -1,5 +1,6 @@
 @use '../foundation/mixin' as m;
 @use '../foundation/function' as f;
+@use '../foundation/var' as v;
 // @use '../foundation/function' as f;
 
 .sub-title{
@@ -10,25 +11,114 @@
     @include m.ques();
 }
 
+.view {
+    display: inline-block;
+
+    &__btn {
+        position: relative;
+        display: inline-block;
+        padding-bottom: f.rem(7);
+        color: v.$color-text;
+        text-decoration: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: f.rem(8);
+            bottom: 0;
+            width: f.rem(50);
+            height: 1px;
+            background: v.$color-text;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: f.rem(-2);
+            width: f.rem(5);
+            height: f.rem(5);
+            border-top: 1px solid v.$color-text;
+            border-right: 1px solid v.$color-text;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__text {
+        display: block;
+        font-size: f.rem(20);
+        line-height: 1;
+        margin-right: f.rem(12);
+    }
+
+    &__marks {
+        position: absolute;
+        right: f.rem(-7);
+        top: 0;
+        width: f.rem(40);
+        height: f.rem(40);
+    }
+
+    &__mark {
+        position: absolute;
+        display: block;
+    }
+
+    &__mark--small {
+        width: f.rem(12);
+        right: f.rem(12);
+        top: f.rem(-10);
+    }
+
+    &__mark--large {
+        width: f.rem(16);
+        right: f.rem(-6);
+        top: f.rem(0);
+    }
+}
+
 .menu{
     &__inner{
         @include m.inner();
     }
+
+    &__btn {
+        width: fit-content;
+        margin-left: auto;
+        margin-top: f.rem(70);
+        }
 }
 
-.ques{
-    &__inner{
+.ques {
+    &__inner {
         @include m.inner();
     }
 
-        .ques__box {
-            position: relative;
-        }
+    &__open{
+            width: 50px;
+    }
 
-        .ques__icon {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: f.rem(30);
-        }
+    &__box {
+        position: relative;
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: f.rem(16);
+    }
+
+    &__title {
+        flex: 1;
+    }
+
+    &__toggle {
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+
+    &__icon {
+        width: f.rem(30);
+    }
 }
