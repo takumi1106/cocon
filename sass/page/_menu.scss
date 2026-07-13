@@ -16,11 +16,10 @@
         @include m.inner();
     }
 
-    // &__btn {
-    //     width: fit-content;
-    //     margin-left: auto;
-    //     margin-top: f.rem(30);
-    // }
+    &__title{
+        @include m.section-title();
+        margin-top: f.rem(170);
+    }
 
         &__slider {
             display: flex;
