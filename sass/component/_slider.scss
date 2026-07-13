@@ -1,0 +1,63 @@
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+
+.slider {
+    position: relative;
+
+    &__track {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: f.rem(32);
+        width: f.rem(200);
+        margin: 0 auto;
+
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include m.mq(desktop) {
+            width: 100%;
+            overflow: visible;
+            justify-content: center;
+        }
+    }
+
+    &__track img {
+        flex-shrink: 0;
+        width: f.rem(200);
+        border-radius: f.rem(10);
+        scroll-snap-align: center;
+
+        @include m.mq(desktop) {
+            width: f.rem(305);
+        }
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: f.rem(48);
+        height: f.rem(48);
+        border: none;
+        cursor: pointer;
+
+        @include m.mq(desktop) {
+            display: none;
+        }
+    }
+
+    &__prev {
+        left: f.rem(-6);
+    }
+
+    &__next {
+        right: f.rem(-6);
+    }
+}
