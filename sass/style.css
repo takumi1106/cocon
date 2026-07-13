@@ -596,7 +596,7 @@ body {
 .mainvisual {
   height: 46.5rem;
   padding: 25rem 0 18.75rem;
-  background: url(/images/mainvisual.webp) no-repeat center center;
+  background: url(./images/mainvisual.webp) no-repeat center center;
   background-size: cover;
   margin-bottom: 9.375rem;
   margin: 5rem auto;
