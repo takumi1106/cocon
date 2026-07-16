@@ -28,6 +28,7 @@ $breakpoints: (
 
     @include mq(desktop){
         font-size: f.rem(43);
+        line-height: math.div(56,43);
     }
 }
 

@@ -628,6 +628,7 @@ body {
 @media (width >= 1024px) {
   .news__title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 .news__post {
@@ -683,6 +684,7 @@ body {
 @media (width >= 1024px) {
   .menu-top__title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 
@@ -702,6 +704,7 @@ body {
 @media (width >= 1024px) {
   .insta__title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 .insta__img {
@@ -893,6 +896,7 @@ body {
 @media (width >= 1024px) {
   .sub-title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 
@@ -1006,6 +1010,7 @@ body {
 @media (width >= 1024px) {
   .sub-title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 
@@ -1067,6 +1072,7 @@ body {
 @media (width >= 1024px) {
   .menu__title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 .menu__slider {
@@ -1139,6 +1145,7 @@ body {
 @media (width >= 1024px) {
   .sub-title {
     font-size: 2.6875rem;
+    line-height: 1.3023255814;
   }
 }
 
