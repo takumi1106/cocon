@@ -1,6 +1,8 @@
 @use '../foundation/mixin' as m;
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
+@use '../component/button';
+@use '../component/slider';
 
 body {
     color: v.$color-text;
@@ -10,7 +12,7 @@ body {
 .mainvisual {
     height: f.rem(744);
     padding: f.rem(400) 0 f.rem(300);
-    background: url(/images/mainvisual.webp) no-repeat center center;
+    background: url(../images/mainvisual.webp) no-repeat center center;
     background-size: cover;
     margin-bottom: f.rem(150);
     margin: f.rem(80) auto;
@@ -46,10 +48,18 @@ body {
         dt {
             font-size: f.rem(12);
             margin-bottom: f.rem(10);
+
+            @include m.mq(desktop){
+                font-size: f.rem(14);
+            }
         }
 
         dd {
             font-size: f.rem(14);
+
+            @include m.mq(desktop){
+                font-size: f.rem(16);
+            }
         }
     }
 
@@ -58,7 +68,7 @@ body {
     }
 }
 
-.menu {
+.menu-top {
     padding: f.rem(80) 0;
 
     &__inner {
@@ -68,46 +78,6 @@ body {
 
     &__title {
         @include m.section-title();
-    }
-
-    &__slider {
-        display: flex;
-        overflow: hidden;
-        scroll-behavior: smooth;
-        gap: f.rem(32);
-        width: f.rem(200);
-        margin: 0 auto;
-    }
-
-    &__slider img {
-        flex-shrink: 0;
-        width: 200px;
-        border-radius: 10px;
-    }
-
-    &__prev,
-    &__next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: f.rem(48);
-        height: f.rem(48);
-        border: none;
-        border-radius: 50%;
-        background: #d9d9d9;
-        cursor: pointer;
-    }
-
-    &__prev {
-        left: f.rem(-24);
-    }
-
-    &__next {
-        right: f.rem(-24);
-    }
-
-    &__btn {
-        @include m.btn();
     }
 }
 
@@ -125,6 +95,19 @@ body {
         grid-template-columns: repeat(2, f.rem(150));
         justify-content: center;
         gap: f.rem(30);
+
+        img:nth-child(n+5){
+            display: none;
+        }
+
+        @include m.mq(desktop){
+            grid-template-columns: repeat(3,f.rem(230));
+            gap: f.rem(60);
+
+            img:nth-child(n+5){
+                display: block;
+            }
+        }
     }
 
     &__btn {
@@ -301,4 +284,9 @@ body {
             opacity: 1;
         }
     }
+}
+
+html,
+body {
+    overscroll-behavior-y: none;
 }
