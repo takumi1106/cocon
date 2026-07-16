@@ -2,118 +2,237 @@
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
 
-.sub-title{
+.sub-title {
     @include m.section-title();
 }
 
-.shop{
-    margin-bottom: f.rem(80);
+.about-switch-picture {
+    display: none;
 
-    &__inner{
-        @include m.inner();
-    }
+    @include m.mq(desktop) {
+        display: block;
+        position: fixed;
+        top: 50%;
+        right: calc((100vw - min(1000px, 90vw)) / 2);
+        z-index: 1;
+        width: min(44vw, f.rem(500));
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: opacity .6s ease;
 
-    &__text{
-        margin-bottom: f.rem(50);
-
-        p{
-            margin-bottom: f.rem(24);
-
-            &:last-child{
-                margin-bottom: 0;
-            }
+        &.is-visible {
+            opacity: 1;
         }
     }
 
-    &__picture{
-        img{
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transform: scale(1.04);
+        transition:
+            opacity 1s ease,
+            transform 1.4s ease;
+
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &:nth-child(3) {
+            inset: 8%;
+            width: 84%;
+            height: 84%;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .shop__picture,
+    .owner__picture,
+    .cameraman__picture,
+    .illustrator__picture,
+    .event__picture {
+        clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+
+        &.is-show {
+            animation: zigzag-reveal 1.2s ease forwards;
+        }
+    }
+
+    @keyframes zigzag-reveal {
+        0% {
+            clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+        }
+
+        30% {
+            clip-path: polygon(0 62%, 8% 70%, 0 78%, 14% 86%, 0 94%, 8% 100%, 0 100%);
+        }
+
+        65% {
+            clip-path: polygon(0 24%, 14% 32%, 0 40%, 24% 50%, 0 60%, 34% 72%, 0 84%, 42% 100%, 0 100%);
+        }
+
+        100% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+}
+
+.shop {
+    margin-top: f.rem(180);
+    margin-bottom: f.rem(80);
+
+    @include m.mq(desktop) {
+        margin-top: f.rem(230);
+        margin-bottom: f.rem(240);
+        min-height: 120vh;
+    }
+
+    @include m.about();
+
+    &__picture {
+        @include m.mq(desktop) {
+            display: none;
+        }
+
+        img {
             width: 300px;
             height: 200px;
             object-fit: cover;
+
+            @include m.mq(desktop) {
+                width: f.rem(500);
+                height: f.rem(333);
+            }
         }
     }
 }
 
-.owner{
+.owner {
     margin-bottom: f.rem(80);
 
-    &__inner{
-        @include m.inner();
+    @include m.mq(desktop) {
+        min-height: 120vh;
+        margin-bottom: f.rem(240);
     }
 
-    &__text{
-        margin-bottom: f.rem(50);
-
-        p{
-            margin-bottom: f.rem(24);
-        }
-    }
+    @include m.about();
 
     &__picture {
+        @include m.mq(desktop) {
+            display: none;
+        }
+
         img {
-            //display: block;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+
+            @include m.mq(desktop) {
+                width: f.rem(500);
+                height: f.rem(333);
+            }
+        }
+    }
+}
+
+.cameraman {
+    margin-bottom: f.rem(80);
+
+    @include m.mq(desktop) {
+        min-height: 120vh;
+        margin-bottom: f.rem(240);
+    }
+
+    @include m.about();
+
+    &__picture {
+        justify-self: center;
+
+        @include m.mq(desktop) {
+            display: none;
+        }
+
+        img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+
+            @include m.mq(desktop) {
+                width: f.rem(333);
+                height: f.rem(500);
+            }
+        }
+    }
+}
+
+.illustrator {
+    margin-bottom: f.rem(80);
+
+    @include m.mq(desktop) {
+        min-height: 120vh;
+        margin-bottom: f.rem(240);
+    }
+
+    @include m.about();
+
+    &__picture {
+        justify-self: center;
+
+        @include m.mq(desktop) {
+            display: none;
+        }
+
+        img {
             width: 290px;
             height: 200px;
             object-fit: cover;
-            //margin: 0 auto 0;
         }
     }
 }
 
-.cameraman{
-    margin-bottom: f.rem(80);
+.event {
+    background-color: v.$color-accent2;
+    padding: f.rem(100) 0;
+    margin-bottom: -200px;
 
-    &__inner{
-        @include m.inner();
-    }
-
-    &__text{
-        margin-bottom: f.rem(50);
-    }
+    @include m.about();
 
     &__picture {
+        position: relative;
+        width: min(100%, f.rem(500));
+        aspect-ratio: 3 / 2;
+        justify-self: center;
+        overflow: hidden;
+
         img {
-            //display: block;
-            width: 220px;
-            height: 250px;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            //margin: 0 auto;
+            opacity: 0;
+            transition: opacity 1.2s ease;
         }
-    }
-}
 
-.illustrator{
-    margin-bottom: f.rem(80);
+        img:first-child,
+        img.is-active {
+            opacity: 1;
+        }
 
-    &__inner{
-        @include m.inner();
-    }
-
-    &__text {
-        margin-bottom: f.rem(50);
-    }
-
-        &__picture {
-            img {
-                //display: block;
-                width: 290px;
-                height: 200px;
-                object-fit: cover;
-                //margin: 0 auto 0;
+        &.is-started {
+            img:first-child:not(.is-active) {
+                opacity: 0;
             }
         }
-}
-
-.event{
-    background-color: v.$color-accent2;
-    padding: f.rem(50) 0 f.rem(80);
-    text-align: right;
-
-    &__inner{
-        @include m.inner();
-    }
-
-    &__title{
-        margin-bottom: f.rem(50);
     }
 }

@@ -19,12 +19,18 @@ $breakpoints: (
     margin-right: auto;
 }
 
-@mixin section-title{
+@mixin section-title {
     font-size: f.rem(32);
-    font-family: 'Hiragino Mincho Pro';
+    font-family: v.$font-family-mincho;
     font-weight: normal;
-    line-height: math.div(44,32);
+    line-height: math.div(44, 32);
     margin-bottom: f.rem(70);
+
+    @include mq(desktop) {
+        font-size: f.rem(43);
+        line-height: math.div(56, 43);
+    }
+
 }
 
 @mixin btn {
@@ -34,30 +40,30 @@ $breakpoints: (
     margin-left: auto;
 }
 
-@mixin ques{
+@mixin ques {
     border-bottom: 1px solid v.$color-text;
     padding-bottom: f.rem(20);
     margin-bottom: f.rem(70);
 
     h3,
-    p{
-        position:relative;
+    p {
+        position: relative;
         padding-left: f.rem(35);
     }
 
-    h3{
+    h3 {
         margin-bottom: f.rem(24);
         font-size: f.rem(20);
         width: f.rem(360);
 
-        &::before{
+        &::before {
             content: "Q";
         }
     }
 
-    p{
-        &::before{
-            content:"A";
+    p {
+        &::before {
+            content: "A";
         }
     }
 
@@ -70,8 +76,42 @@ $breakpoints: (
         line-height: 1;
     }
 
-    span{
+    span {
         font-size: f.rem(22);
         padding-right: f.rem(10);
     }
+}
+
+@mixin about {
+    &__inner {
+        @include inner();
+
+        display: grid;
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1.2fr;
+            column-gap: f.rem(100);
+            align-items: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: f.rem(50);
+    }
+
+    &__text {
+        margin-bottom: f.rem(50);
+        font-family: v.$font-family-mincho;
+        letter-spacing: f.ls(5);
+        line-height: 1.8;
+
+        p {
+            margin-bottom: f.rem(24);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }
