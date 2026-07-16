@@ -19,16 +19,16 @@ $breakpoints: (
     margin-right: auto;
 }
 
-@mixin section-title{
+@mixin section-title {
     font-size: f.rem(32);
     font-family: 'Hiragino Mincho Pro';
     font-weight: normal;
-    line-height: math.div(44,32);
+    line-height: math.div(44, 32);
     margin-bottom: f.rem(70);
 
-    @include mq(desktop){
+    @include mq(desktop) {
         font-size: f.rem(43);
-        line-height: math.div(56,43);
+        line-height: math.div(56, 43);
     }
 }
 
@@ -39,30 +39,30 @@ $breakpoints: (
     margin-left: auto;
 }
 
-@mixin ques{
+@mixin ques {
     border-bottom: 1px solid v.$color-text;
     padding-bottom: f.rem(20);
     margin-bottom: f.rem(70);
 
     h3,
-    p{
-        position:relative;
+    p {
+        position: relative;
         padding-left: f.rem(35);
     }
 
-    h3{
+    h3 {
         margin-bottom: f.rem(24);
         font-size: f.rem(20);
         width: f.rem(360);
 
-        &::before{
+        &::before {
             content: "Q";
         }
     }
 
-    p{
-        &::before{
-            content:"A";
+    p {
+        &::before {
+            content: "A";
         }
     }
 
@@ -75,7 +75,7 @@ $breakpoints: (
         line-height: 1;
     }
 
-    span{
+    span {
         font-size: f.rem(22);
         padding-right: f.rem(10);
     }
