@@ -25,6 +25,10 @@ $breakpoints: (
     font-weight: normal;
     line-height: math.div(44,32);
     margin-bottom: f.rem(70);
+
+    @include mq(desktop){
+        font-size: f.rem(43);
+    }
 }
 
 @mixin btn {

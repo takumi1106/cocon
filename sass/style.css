@@ -625,6 +625,11 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+@media (width >= 1024px) {
+  .news__title {
+    font-size: 2.6875rem;
+  }
+}
 .news__post {
   margin-bottom: 1.875rem;
   padding-bottom: 0.625rem;
@@ -637,8 +642,18 @@ body {
   font-size: 0.75rem;
   margin-bottom: 0.625rem;
 }
+@media (width >= 1024px) {
+  .news__post dt {
+    font-size: 0.875rem;
+  }
+}
 .news__post dd {
   font-size: 0.875rem;
+}
+@media (width >= 1024px) {
+  .news__post dd {
+    font-size: 1rem;
+  }
 }
 .news__btn {
   display: block;
@@ -665,6 +680,11 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+@media (width >= 1024px) {
+  .menu-top__title {
+    font-size: 2.6875rem;
+  }
+}
 
 .insta__inner {
   max-width: 1000px;
@@ -678,6 +698,11 @@ body {
   font-weight: normal;
   line-height: 1.375;
   margin-bottom: 4.375rem;
+}
+@media (width >= 1024px) {
+  .insta__title {
+    font-size: 2.6875rem;
+  }
 }
 .insta__img {
   display: grid;
@@ -853,12 +878,22 @@ body {
   }
 }
 
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
 .sub-title {
   font-size: 2rem;
   font-family: "Hiragino Mincho Pro";
   font-weight: normal;
   line-height: 1.375;
   margin-bottom: 4.375rem;
+}
+@media (width >= 1024px) {
+  .sub-title {
+    font-size: 2.6875rem;
+  }
 }
 
 .shop {
@@ -968,6 +1003,11 @@ body {
   line-height: 1.375;
   margin-bottom: 4.375rem;
 }
+@media (width >= 1024px) {
+  .sub-title {
+    font-size: 2.6875rem;
+  }
+}
 
 .qs-box {
   border-bottom: 1px solid #7D5542;
@@ -1003,6 +1043,14 @@ body {
   padding-right: 0.625rem;
 }
 
+.menu {
+  margin-top: 11.25rem;
+}
+@media (width >= 1024px) {
+  .menu {
+    margin-top: 14.375rem;
+  }
+}
 .menu__inner {
   max-width: 1000px;
   width: 90%;
@@ -1015,7 +1063,11 @@ body {
   font-weight: normal;
   line-height: 1.375;
   margin-bottom: 4.375rem;
-  margin-top: 10.625rem;
+}
+@media (width >= 1024px) {
+  .menu__title {
+    font-size: 2.6875rem;
+  }
 }
 .menu__slider {
   display: flex;
@@ -1083,6 +1135,11 @@ body {
   font-weight: normal;
   line-height: 1.375;
   margin-bottom: 4.375rem;
+}
+@media (width >= 1024px) {
+  .sub-title {
+    font-size: 2.6875rem;
+  }
 }
 
 .news__inner {

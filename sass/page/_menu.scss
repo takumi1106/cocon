@@ -12,13 +12,18 @@
 }
 
 .menu{
+    margin-top: f.rem(180);
+
+    @include m.mq(desktop) {
+        margin-top: f.rem(230);
+    }
+
     &__inner{
         @include m.inner();
     }
 
     &__title{
         @include m.section-title();
-        margin-top: f.rem(170);
     }
 
         &__slider {

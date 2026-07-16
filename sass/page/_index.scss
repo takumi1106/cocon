@@ -48,10 +48,18 @@ body {
         dt {
             font-size: f.rem(12);
             margin-bottom: f.rem(10);
+
+            @include m.mq(desktop){
+                font-size: f.rem(14);
+            }
         }
 
         dd {
             font-size: f.rem(14);
+
+            @include m.mq(desktop){
+                font-size: f.rem(16);
+            }
         }
     }
 
@@ -276,4 +284,9 @@ body {
             opacity: 1;
         }
     }
+}
+
+html,
+body {
+    overscroll-behavior-y: none;
 }
