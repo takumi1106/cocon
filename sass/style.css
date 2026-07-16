@@ -421,7 +421,7 @@
   width: fit-content;
   margin-left: auto;
   margin-top: 1.875rem;
-  background: #AADCDD;
+  background: #D9EFEF;
 }
 .view__in {
   display: block;
@@ -900,17 +900,111 @@ body {
   }
 }
 
+.about-switch-picture {
+  display: none;
+}
+@media (width >= 1024px) {
+  .about-switch-picture {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: calc((100vw - min(1000px, 90vw)) / 2);
+    z-index: 1;
+    width: min(44vw, 31.25rem);
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: opacity 0.6s ease;
+  }
+  .about-switch-picture.is-visible {
+    opacity: 1;
+  }
+}
+.about-switch-picture__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1s ease, transform 1.4s ease;
+}
+.about-switch-picture__image.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.about-switch-picture__image:nth-child(3) {
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  margin: auto;
+}
+
+@media (max-width: 1023px) {
+  .shop__picture,
+  .owner__picture,
+  .cameraman__picture,
+  .illustrator__picture,
+  .event__picture {
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+  }
+  .shop__picture.is-show,
+  .owner__picture.is-show,
+  .cameraman__picture.is-show,
+  .illustrator__picture.is-show,
+  .event__picture.is-show {
+    animation: zigzag-reveal 1.2s ease forwards;
+  }
+  @keyframes zigzag-reveal {
+    0% {
+      clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+    }
+    30% {
+      clip-path: polygon(0 62%, 8% 70%, 0 78%, 14% 86%, 0 94%, 8% 100%, 0 100%);
+    }
+    65% {
+      clip-path: polygon(0 24%, 14% 32%, 0 40%, 24% 50%, 0 60%, 34% 72%, 0 84%, 42% 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+}
 .shop {
+  margin-top: 11.25rem;
   margin-bottom: 5rem;
+}
+@media (width >= 1024px) {
+  .shop {
+    margin-top: 14.375rem;
+    margin-bottom: 15rem;
+    min-height: 120vh;
+  }
 }
 .shop__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+}
+@media (width >= 1024px) {
+  .shop__inner {
+    grid-template-columns: 1fr 1.2fr;
+    -moz-column-gap: 6.25rem;
+         column-gap: 6.25rem;
+    align-items: center;
+  }
 }
 .shop__text {
   margin-bottom: 3.125rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
 }
 .shop__text p {
   margin-bottom: 1.5rem;
@@ -918,65 +1012,178 @@ body {
 .shop__text p:last-child {
   margin-bottom: 0;
 }
+@media (width >= 1024px) {
+  .shop__picture {
+    display: none;
+  }
+}
 .shop__picture img {
   width: 300px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (width >= 1024px) {
+  .shop__picture img {
+    width: 31.25rem;
+    height: 20.8125rem;
+  }
+}
 
 .owner {
   margin-bottom: 5rem;
+}
+@media (width >= 1024px) {
+  .owner {
+    min-height: 120vh;
+    margin-bottom: 15rem;
+  }
 }
 .owner__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+}
+@media (width >= 1024px) {
+  .owner__inner {
+    grid-template-columns: 1fr 1.2fr;
+    -moz-column-gap: 6.25rem;
+         column-gap: 6.25rem;
+    align-items: center;
+  }
 }
 .owner__text {
   margin-bottom: 3.125rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
 }
 .owner__text p {
   margin-bottom: 1.5rem;
 }
+.owner__text p:last-child {
+  margin-bottom: 0;
+}
+@media (width >= 1024px) {
+  .owner__picture {
+    display: none;
+  }
+}
 .owner__picture img {
-  width: 290px;
+  width: 300px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (width >= 1024px) {
+  .owner__picture img {
+    width: 31.25rem;
+    height: 20.8125rem;
+  }
+}
 
 .cameraman {
   margin-bottom: 5rem;
+}
+@media (width >= 1024px) {
+  .cameraman {
+    min-height: 120vh;
+    margin-bottom: 15rem;
+  }
 }
 .cameraman__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+}
+@media (width >= 1024px) {
+  .cameraman__inner {
+    grid-template-columns: 1fr 1.2fr;
+    -moz-column-gap: 6.25rem;
+         column-gap: 6.25rem;
+    align-items: center;
+  }
 }
 .cameraman__text {
   margin-bottom: 3.125rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.cameraman__text p {
+  margin-bottom: 1.5rem;
+}
+.cameraman__text p:last-child {
+  margin-bottom: 0;
+}
+.cameraman__picture {
+  justify-self: center;
+}
+@media (width >= 1024px) {
+  .cameraman__picture {
+    display: none;
+  }
 }
 .cameraman__picture img {
-  width: 220px;
-  height: 250px;
+  width: 200px;
+  height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (width >= 1024px) {
+  .cameraman__picture img {
+    width: 20.8125rem;
+    height: 31.25rem;
+  }
 }
 
 .illustrator {
   margin-bottom: 5rem;
+}
+@media (width >= 1024px) {
+  .illustrator {
+    min-height: 120vh;
+    margin-bottom: 15rem;
+  }
 }
 .illustrator__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+}
+@media (width >= 1024px) {
+  .illustrator__inner {
+    grid-template-columns: 1fr 1.2fr;
+    -moz-column-gap: 6.25rem;
+         column-gap: 6.25rem;
+    align-items: center;
+  }
 }
 .illustrator__text {
   margin-bottom: 3.125rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.illustrator__text p {
+  margin-bottom: 1.5rem;
+}
+.illustrator__text p:last-child {
+  margin-bottom: 0;
+}
+.illustrator__picture {
+  justify-self: center;
+}
+@media (width >= 1024px) {
+  .illustrator__picture {
+    display: none;
+  }
 }
 .illustrator__picture img {
   width: 290px;
@@ -986,18 +1193,60 @@ body {
 }
 
 .event {
-  background-color: #AADCDD;
-  padding: 3.125rem 0 5rem;
-  text-align: right;
+  background-color: #D9EFEF;
+  padding: 6.25rem 0;
+  margin-bottom: -200px;
 }
 .event__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
 }
-.event__title {
+@media (width >= 1024px) {
+  .event__inner {
+    grid-template-columns: 1fr 1.2fr;
+    -moz-column-gap: 6.25rem;
+         column-gap: 6.25rem;
+    align-items: center;
+  }
+}
+.event__text {
   margin-bottom: 3.125rem;
+  font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.event__text p {
+  margin-bottom: 1.5rem;
+}
+.event__text p:last-child {
+  margin-bottom: 0;
+}
+.event__picture {
+  position: relative;
+  width: min(100%, 31.25rem);
+  aspect-ratio: 3/2;
+  justify-self: center;
+  overflow: hidden;
+}
+.event__picture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.event__picture img:first-child,
+.event__picture img.is-active {
+  opacity: 1;
+}
+.event__picture.is-started img:first-child:not(.is-active) {
+  opacity: 0;
 }
 
 .sub-title {
