@@ -603,12 +603,17 @@ body {
 .mainvisual__img {
   position: absolute;
   inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.mainvisual__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+}
+.mainvisual__img.active {
+  opacity: 1;
 }
 .mainvisual__img.active {
   opacity: 1;

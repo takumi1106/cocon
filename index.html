@@ -106,20 +106,34 @@
 
         </div>
     </header>
-    <main class="main">
-        <section class="mainvisual">
-            <img src="./images/mainvisual1.webp" class="mainvisual__img active" alt="">
-            <img src="./images/mainvisual2.webp" class="mainvisual__img" alt="">
-            <img src="./images/mainvisual3.webp" class="mainvisual__img" alt="">
-            <img src="./images/mainvisual4.webp" class="mainvisual__img" alt="">
+    <section class="mainvisual">
+        <picture class="mainvisual__img active">
+            <source media="(max-width: 767px)" srcset="./images/mainvisual1_sp.webp">
+            <img src="./images/mainvisual1.webp" alt="">
+        </picture>
 
-            <div class="mainvisual__inner">
-                <h2 class="mainvisual__title">
-                    イヌノビヨウシツ<br>
-                    cocon
-                </h2>
-            </div>
-        </section>
+        <picture class="mainvisual__img">
+            <source media="(max-width: 767px)" srcset="./images/mainvisual2_sp.webp">
+            <img src="./images/mainvisual2.webp" alt="">
+        </picture>
+
+        <picture class="mainvisual__img">
+            <source media="(max-width: 767px)" srcset="./images/mainvisual3_sp.webp">
+            <img src="./images/mainvisual3.webp" alt="">
+        </picture>
+
+        <picture class="mainvisual__img">
+            <source media="(max-width: 767px)" srcset="./images/mainvisual4_sp.webp">
+            <img src="./images/mainvisual4.webp" alt="">
+        </picture>
+
+        <div class="mainvisual__inner">
+            <h2 class="mainvisual__title">
+                イヌノビヨウシツ<br>
+                cocon
+            </h2>
+        </div>
+    </section>
         <section class="news">
             <div class="news__inner">
                 <h2 class="news__title">News</h2>
