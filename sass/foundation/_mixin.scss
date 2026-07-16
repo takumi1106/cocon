@@ -80,3 +80,33 @@ $breakpoints: (
         padding-right: f.rem(10);
     }
 }
+
+@mixin about {
+    &__inner {
+        @include inner();
+
+        display: grid;
+
+        @include mq(desktop) {
+            grid-template-columns: 1fr 1.2fr;
+            column-gap: f.rem(100);
+            align-items: center;
+        }
+    }
+
+    &__text {
+        margin-bottom: f.rem(50);
+        font-family: v.$font-family-mincho;
+        letter-spacing: f.ls(5);
+        line-height: 1.8;
+
+        p {
+            margin-bottom: f.rem(24);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
