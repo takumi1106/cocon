@@ -12,10 +12,10 @@
 }
 
 .menu{
-    margin-top: f.rem(180);
+    margin: f.rem(180) auto f.rem(150);
 
     @include m.mq(desktop) {
-        margin-top: f.rem(230);
+        margin-top: f.rem(160);
     }
 
     &__inner{
@@ -84,7 +84,6 @@
 
     &__title {
         flex: 1;
-        margin-top: f.rem(70);
     }
 
     &__toggle {

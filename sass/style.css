@@ -594,24 +594,42 @@ body {
 }
 
 .mainvisual {
+  position: relative;
+  overflow: hidden;
   height: 46.5rem;
-  padding: 25rem 0 18.75rem;
-  background: url(../images/mainvisual.webp) no-repeat center center;
-  background-size: cover;
   margin-bottom: 9.375rem;
-  margin: 5rem auto;
+  margin-top: 6.25rem;
+}
+.mainvisual__img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.mainvisual__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mainvisual__img.active {
+  opacity: 1;
+}
+.mainvisual__img.active {
+  opacity: 1;
 }
 .mainvisual__inner {
+  position: relative;
+  z-index: 2;
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-.mainvisual__title {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
 
+.news {
+  margin-bottom: 9.375rem;
+}
 .news__inner {
   max-width: 1000px;
   width: 90%;
@@ -665,7 +683,7 @@ body {
 }
 
 .menu-top {
-  padding: 5rem 0;
+  margin-bottom: 9.375rem;
 }
 .menu-top__inner {
   position: relative;
@@ -748,6 +766,7 @@ body {
   max-width: 80%;
   max-height: 80%;
   border-radius: 10px;
+  margin-top: 6.25rem;
 }
 
 .reserve-btn {
@@ -1298,11 +1317,11 @@ body {
 }
 
 .menu {
-  margin-top: 11.25rem;
+  margin: 11.25rem auto 9.375rem;
 }
 @media (width >= 1024px) {
   .menu {
-    margin-top: 14.375rem;
+    margin-top: 10rem;
   }
 }
 .menu__inner {
@@ -1374,7 +1393,6 @@ body {
 }
 .ques__title {
   flex: 1;
-  margin-top: 4.375rem;
 }
 .ques__toggle {
   flex-shrink: 0;

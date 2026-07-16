@@ -168,3 +168,16 @@ if (mobileFadeImages.length > 0) {
   window.addEventListener("resize", showMobileImages);
   showMobileImages();
 }
+
+//メインヴィジュアル
+const slides = document.querySelectorAll(".mainvisual__img");
+
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove("active");
+
+  current = (current + 1) % slides.length;
+
+  slides[current].classList.add("active");
+}, 5000);
