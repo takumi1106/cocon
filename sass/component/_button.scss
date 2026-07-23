@@ -54,13 +54,13 @@
             right: f.rem(-2);
         }
 
-                &:hover .view__mark--large {
-                    animation: pawLarge .35s ease;
-                }
+        &:hover .view__mark--large {
+            animation: pawLarge .35s ease;
+        }
 
-                &:hover .view__mark--small {
-                    animation: pawSmall .35s ease .12s;
-                }
+        &:hover .view__mark--small {
+            animation: pawSmall .35s ease .12s;
+        }
     }
 
     &__text {
