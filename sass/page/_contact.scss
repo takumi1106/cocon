@@ -182,41 +182,4 @@ $color-back: #9b6c4b;
             margin-top: 30px;
         }
     }
-
-    /* フッター */
-    .footer__menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .footer__logo {
-        img {
-            width: 110px;
-        }
-    }
-
-    .footer__nav {
-        margin-top: 0;
-    }
-
-    .footer__list {
-        li {
-            line-height: 1.6;
-        }
-    }
-
-    .footer__company {
-        margin-top: 40px;
-    }
-
-    .footer__sns {
-        margin-top: 40px;
-    }
-
-    .footer__copy {
-        margin-top: 20px;
-    }
-
 }

@@ -69,12 +69,13 @@ $color-back: #9b6c4b;
     }
 
     &__list-title{
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 
     &__nav {
-        margin-top: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
     }
 
     &__list {
@@ -91,7 +92,7 @@ $color-back: #9b6c4b;
 
     &__company {
         display: grid;
-        grid-template-columns: 170px 1fr;
+        grid-template-columns: 185px 1fr;
         gap: 18px 20px;
         font-size: 16px;
         line-height: 1.8;
@@ -124,9 +125,7 @@ $color-back: #9b6c4b;
 }
 
 @media (max-width: 767px) {
-
     .footer {
-
         &__access {
             padding: 60px 0;
         }
@@ -151,13 +150,14 @@ $color-back: #9b6c4b;
             width: fit-content;
                 max-width: 88%;
                 margin: 0 auto;
-                grid-template-columns: 54px 1fr;
+                grid-template-columns: 61px 1fr;
                 text-align: left;
 
             dt,
             dd {
                 font-size: 15px;
                 line-height: 2;
+                font-size: 14px;
             }
 
             dt {
@@ -189,6 +189,7 @@ $color-back: #9b6c4b;
 
         &__company {
             text-align: left;
+            grid-template-columns: 170px 1fr;
 
             dt,
             dd {
@@ -212,6 +213,34 @@ $color-back: #9b6c4b;
             margin-top: 40px;
             text-align: center;
             font-size: 13px;
+        }
+
+        &__logo {
+            img {
+                width: 180px;
+            }
+        }
+
+        &__nav {
+            margin: 0;
+        }
+
+        &__list {
+            li {
+                line-height: 1.6;
+            }
+        }
+
+        &__company {
+            margin-top: 40px;
+        }
+
+        &__sns {
+            margin-top: 40px;
+        }
+
+        &__copy {
+            margin-top: 20px;
         }
     }
 }
