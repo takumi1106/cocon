@@ -61,28 +61,17 @@
     .cameraman__picture,
     .illustrator__picture,
     .event__picture {
-        clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+        opacity: 0;
+        transform: translateY(f.rem(32));
+        transition:
+            opacity .8s ease,
+            transform .8s ease;
+        will-change: opacity, transform;
 
         &.is-show {
-            animation: zigzag-reveal 1.2s ease forwards;
-        }
-    }
-
-    @keyframes zigzag-reveal {
-        0% {
-            clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
-        }
-
-        30% {
-            clip-path: polygon(0 62%, 8% 70%, 0 78%, 14% 86%, 0 94%, 8% 100%, 0 100%);
-        }
-
-        65% {
-            clip-path: polygon(0 24%, 14% 32%, 0 40%, 24% 50%, 0 60%, 34% 72%, 0 84%, 42% 100%, 0 100%);
-        }
-
-        100% {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            opacity: 1;
+            transform: translateY(0);
+            will-change: auto;
         }
     }
 }
