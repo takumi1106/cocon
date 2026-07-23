@@ -87,6 +87,30 @@
     }
 }
 
+.about-sections {
+    display: flow-root;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../images/about_bg.webp");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 .shop {
     margin-top: f.rem(180);
     margin-bottom: f.rem(80);
@@ -206,6 +230,17 @@
     margin-bottom: -200px;
 
     @include m.about();
+
+    @include m.mq(desktop) {
+        &__inner {
+            grid-template-columns: minmax(f.rem(470), 1fr) minmax(0, 1.05fr);
+            column-gap: f.rem(60);
+        }
+
+        &__title {
+            width: max-content;
+        }
+    }
 
     &__picture {
         position: relative;
