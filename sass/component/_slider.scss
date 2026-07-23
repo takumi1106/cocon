@@ -32,6 +32,7 @@
         width: f.rem(200);
         border-radius: f.rem(10);
         scroll-snap-align: center;
+        cursor: pointer;
 
         @include m.mq(desktop) {
             width: f.rem(305);

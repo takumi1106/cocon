@@ -38,15 +38,15 @@ $color-back: #9b6c4b;
         align-items: start;
         row-gap: 10px;
         column-gap: 20px;
+
         dt,
-
         dd {
-
             margin: 0;
-
-            line-height: 0.5;
         }
 
+        dt{
+            font-weight: bold;
+        }
     }
 
     &__bottom {
@@ -131,18 +131,23 @@ $color-back: #9b6c4b;
         }
 
         &__map {
+            display: flex;
+            justify-content: center;
             margin-bottom: 40px;
-            text-align: center;
 
             iframe {
-                width: 350px;
+                width: 100%;
+                max-width: 350px;
                 height: 350px;
             }
         }
 
         &__info {
-            width: 88%;
-            margin: 0 auto;
+            width: fit-content;
+                max-width: 88%;
+                margin: 0 auto;
+                grid-template-columns: 54px 1fr;
+                text-align: left;
 
             dt,
             dd {
