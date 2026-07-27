@@ -71,10 +71,10 @@ $color-back: #9b6c4b;
     &__list-title{
         font-size: 28px;
         margin-bottom: 20px;
+        font-weight: bold;
     }
 
     &__nav {
-        font-weight: bold;
         margin-bottom: 20px;
     }
 
@@ -83,10 +83,39 @@ $color-back: #9b6c4b;
         margin: 0;
         padding: 0;
 
-        li {
+    li {
+            position: relative;
+            width: fit-content;
             color: $color-back;
             font-size: 18px;
+            font-weight: 400;
             line-height: 3;
+
+            transition:
+                color 0.2s ease,
+                font-weight 0.2s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 12px;
+                width: 100%;
+                height: 1px;
+                background: currentColor;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                color: #7D5542;
+                font-weight: 700;
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
         }
     }
 
@@ -185,6 +214,7 @@ $color-back: #9b6c4b;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            align-items: center;
         }
 
         &__company {
@@ -225,11 +255,18 @@ $color-back: #9b6c4b;
             margin: 0;
         }
 
-        &__list {
-            li {
-                line-height: 1.6;
-            }
-        }
+                &__list {
+                    text-align: center;
+
+                    li {
+                        padding-bottom: 1.5px;
+                        line-height: 1.6;
+
+                        &::after {
+                            bottom: 0;
+                        }
+                    }
+                }
 
         &__company {
             margin-top: 40px;
