@@ -119,6 +119,16 @@
                 <div class="news__img">
                     <img src="./images/news_img.webp" alt="記事の写真">
                 </div>
+                <nav class="pagination" aria-label="記事一覧のページ">
+                    <a class="pagination__prev" href="#" aria-label="前のページ">‹</a>
+
+                    <a class="pagination__number is-current" href="?page=1" aria-current="page">1</a>
+
+                    <a class="pagination__number" href="?page=2">2</a>
+                    <a class="pagination__number" href="?page=3">3</a>
+
+                    <a class="pagination__next" href="#" aria-label="次のページ">›</a>
+                </nav>
             </div>
         </section>
     </main>
@@ -144,28 +154,32 @@
                     <dd>毎週（金）／その他 不定休あり</dd>
 
                     <dt>駐車場</dt>
-                    <dd>○台あり</dd>
+                    <dd>西山商店街有料パーキング有り</dd>
 
                     <dt>最寄り駅</dt>
-                    <dd>地下鉄東山線 ○○駅から徒歩○分</dd>
+                    <dd>地下鉄東山線 星ヶ丘駅から徒歩15分</dd>
                 </dl>
             </div>
         </div>
         <div class="footer__bottom">
             <div class="footer__inner">
                 <div class="footer__content">
-                    <div class="footer__logo">
-                        <img src="./images/cocon_logo.png" alt="">
-                    </div>
 
-                    <nav class="footer__nav">
-                        <ul class="footer__list">
-                            <li><a href="./index.html">ホーム</a></li>
-                            <li><a href="./about.html">coconについて</a></li>
-                            <li><a href="./menu.html">メニュー</a></li>
-                            <li><a href="./contact.html">お問い合わせ</a></li>
-                        </ul>
-                    </nav>
+                    <div class="footer__menu">
+                        <a class="footer__logo" href="./index.html">
+                            <img src="./images/cocon_logo.webp" alt="">
+                        </a>
+
+                        <nav class="footer__nav">
+                            <h3 class="footer__list-title">Quick Link</h3>
+                            <ul class="footer__list">
+                                <li><a href="./index.html">ホーム</a></li>
+                                <li><a href="./about.html">coconについて</a></li>
+                                <li><a href="./menu.html">メニュー</a></li>
+                                <li><a href="./contact.html">お問い合わせ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
                     <dl class="footer__company">
                         <dt>第一種動物取扱業種別</dt>
@@ -188,13 +202,15 @@
                     </dl>
                 </div>
 
-                <div class="footer__sns">
-                    <a href=""><img src="" alt=""></a>
-                    <a href=""><img src="" alt=""></a>
-                </div>
-
-                <small class="footer__copy">&copy;@cocon</small>
             </div>
+
+            <div class="footer__sns">
+                <a href="https://lin.ee/9jmTs20"><img src="./images/LINE_Brand_icon.png" alt="ライン"></a>
+                <a href="https://www.instagram.com/groomer_cocon/"><img src="./images/Instagram_Glyph_Gradient.png"
+                        alt="インスタ"></a>
+            </div>
+
+            <small class="footer__copy">&copy;イヌノビヨウシツ@cocon</small>
         </div>
     </footer>
     <a href="#" class="reserve-btn">

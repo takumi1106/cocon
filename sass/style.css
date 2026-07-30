@@ -663,35 +663,28 @@ body {
 .mainvisual {
   position: relative;
   overflow: hidden;
-  height: 46.5rem;
-  margin-bottom: 9.375rem;
-  margin-top: 6.25rem;
+  height: 50.25rem;
+  background-color: #FBF0E3;
 }
 .mainvisual__img {
   position: absolute;
-  inset: 0;
+  top: 24.0625rem;
+  left: 0;
+  width: 20.875rem;
+  height: 13.916875rem;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 .mainvisual__img img {
+  display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-top-right-radius: 35%;
 }
 .mainvisual__img.active {
   opacity: 1;
-}
-.mainvisual__img.active {
-  opacity: 1;
-}
-.mainvisual__inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1000px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .news {
@@ -1507,11 +1500,37 @@ body {
   }
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 0.4375rem;
+}
+
 .news__inner {
   max-width: 1000px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+.news__title {
+  margin-top: 11.25rem;
+}
+@media (width >= 1024px) {
+  .news__title {
+    margin-top: 14.375rem;
+  }
 }
 .news__text {
   margin-bottom: 4.375rem;
@@ -1522,10 +1541,47 @@ body {
 .news__text p:last-child {
   margin-bottom: 0;
 }
-.news__text__img img {
-  width: 18.75rem;
-  height: 12.5rem;
-  aspect-ratio: 3/2;
+.news__img {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+}
+@media (width >= 1024px) {
+  .news__img {
+    width: 70%;
+    height: 70%;
+  }
+}
+.news__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.875rem;
+  margin-top: 5rem;
+}
+.pagination a {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #7D5542;
+  border-radius: 50%;
+  color: #7D5542;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.pagination a:hover,
+.pagination .is-current {
+  color: #fff;
+  background-color: #9b6c4b;
 }
 
 .lein-btn {
