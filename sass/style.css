@@ -686,6 +686,18 @@ body {
 .mainvisual__img.active {
   opacity: 1;
 }
+.mainvisual__varticl {
+  position: relative;
+  display: flex;
+  gap: 0.2%;
+  top: 9.0625rem;
+  left: 16.25rem;
+}
+.mainvisual__varticl p {
+  font-size: 1.25rem;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.21875rem;
+}
 
 .news {
   margin-bottom: 9.375rem;

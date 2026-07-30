@@ -37,6 +37,20 @@ body {
             opacity: 1;
         }
     }
+
+    &__varticl{
+        position: relative;
+        display: flex;
+        gap: 0.2%;
+        top: f.rem(145);
+        left: f.rem(260);
+
+        p{
+            font-size: f.rem(20);
+            writing-mode: vertical-rl;
+            letter-spacing: f.rem(3.5);
+        }
+    }
 }
 
 .news {
