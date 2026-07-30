@@ -2,8 +2,8 @@
 @use '../foundation/function' as f;
 @use '../foundation/var' as v;
 $breakpoints: (
-    "tablet": 768px,
-    "desktop": 1024px
+    "tablet": 769px,
+    "desktop": 1025px
 );
 
 @mixin mq($breakpoint: desktop) {
@@ -12,7 +12,7 @@ $breakpoints: (
     }
 }
 
-@mixin inner($mw: 1000px, $w: 90%) {
+@mixin inner($mw: 1200px, $w: 90%) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
