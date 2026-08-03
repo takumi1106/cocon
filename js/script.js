@@ -273,7 +273,7 @@ if (mobileFadeImages.length > 0) {
 
 //メインヴィジュアル
 const slides = document.querySelectorAll(".mainvisual__img");
-const mainvisualLoading = document.querySelector(".mainvisual__loading");
+const loadingScreen = document.querySelector(".loading-screen");
 
 let current = 0;
 
@@ -292,47 +292,12 @@ if (slides.length > 1) {
   }, 5000);
 }
 
-if (mainvisualLoading) {
-  const loadingMediaQuery = window.matchMedia("(min-width: 769px)");
-  const loadingInterval = 2000;
-  const loadingDurations = {
-    pc: 1240,
-    sp: 2060,
-  };
-  let loadingTimer;
+if (loadingScreen) {
+  window.setTimeout(() => {
+    loadingScreen.classList.add("is-hidden");
+  }, 2000);
 
-  const getLoadingConfig = () => {
-    if (loadingMediaQuery.matches) {
-      return {
-        src: mainvisualLoading.dataset.pcSrc,
-        duration: loadingDurations.pc,
-      };
-    }
-
-    return {
-      src: mainvisualLoading.dataset.spSrc,
-      duration: loadingDurations.sp,
-    };
-  };
-
-  const playMainvisualLoading = () => {
-    const config = getLoadingConfig();
-
-    window.clearTimeout(loadingTimer);
-    mainvisualLoading.classList.remove("is-playing");
-    mainvisualLoading.removeAttribute("src");
-
-    window.requestAnimationFrame(() => {
-      mainvisualLoading.src = `${config.src}?t=${Date.now()}`;
-      mainvisualLoading.classList.add("is-playing");
-
-      loadingTimer = window.setTimeout(() => {
-        mainvisualLoading.classList.remove("is-playing");
-        loadingTimer = window.setTimeout(playMainvisualLoading, loadingInterval);
-      }, config.duration);
-    });
-  };
-
-  loadingMediaQuery.addEventListener("change", playMainvisualLoading);
-  playMainvisualLoading();
+  loadingScreen.addEventListener("transitionend", () => {
+    loadingScreen.remove();
+  }, { once: true });
 }
