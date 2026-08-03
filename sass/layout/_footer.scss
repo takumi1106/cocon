@@ -1,5 +1,6 @@
 @use '../foundation/mixin' as m;
 @use '../foundation/var' as v;
+@use "../foundation/function" as f;
 $color-text: #7D5542;
 $color-main: #FBF0E3;
 $color-back: #9b6c4b;
@@ -25,9 +26,19 @@ $color-back: #9b6c4b;
 
         iframe {
             display: block;
-            width: 500px;
-            height: 500px;
+            width: f.rem(500);
+            height: f.rem(500);
             border: 0;
+
+            @include m.mq(tablet){
+                width: f.rem(400);
+                height: f.rem(400);
+            }
+
+            @include m.mq(desktop){
+                width: f.rem(450);
+                height: f.rem(450);
+            }
         }
     }
 
@@ -37,7 +48,7 @@ $color-back: #9b6c4b;
         grid-template-columns: 120px 1fr;
         align-items: start;
         row-gap: 10px;
-        column-gap: 20px;
+        column-gap: f.rem(20);
 
         dt,
         dd {

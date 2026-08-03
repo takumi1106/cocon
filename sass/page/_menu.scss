@@ -89,6 +89,7 @@
     &__toggle {
         flex-shrink: 0;
         cursor: pointer;
+        transform: rotate(90deg);
     }
 
     &__icon {
