@@ -711,6 +711,68 @@ body {
   font-family: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 }
 
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #FBF0E3;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loading-screen.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loading-screen picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.loading-screen__gif {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.loading-screen__shopname {
+  position: absolute;
+  top: 50%;
+  left: 0.625rem;
+  z-index: 1;
+  width: min(42vw, 10rem);
+  height: auto;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: loadingShopnameFade 1s ease-in-out 2 both;
+}
+@media (width >= 769px) {
+  .loading-screen__shopname {
+    top: 2.875rem;
+    right: 3.375rem;
+    left: auto;
+    width: min(24vw, 17.5rem);
+    transform: none;
+  }
+}
+
+@keyframes loadingShopnameFade {
+  0%, 100% {
+    opacity: 0;
+    filter: blur(0.0625rem);
+  }
+  45%, 55% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 .mainvisual {
   position: relative;
   overflow: hidden;
@@ -721,23 +783,6 @@ body {
   .mainvisual {
     height: 52.1875rem;
   }
-}
-.mainvisual__loading {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-.mainvisual__loading.is-playing {
-  opacity: 0.3;
 }
 .mainvisual__img {
   position: absolute;
