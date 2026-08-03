@@ -99,19 +99,18 @@ body {
 
     &__spname {
         display: block;
-        width: f.rem(250);
-        margin-top: f.rem(24);
+        width: f.rem(220);
         margin-left: auto;
-        transform: translate(f.rem(55), f.rem(45));
+        transform: translate(f.rem(15), f.rem(95));
 
         @include m.mq(tablet) {
-            width: f.rem(380);
-            transform: translate(f.rem(90), f.rem(-60));
+            width: f.rem(260);
+            transform: translate(f.rem(20), f.rem(60));
         }
 
         @include m.mq(desktop) {
-            width: f.rem(390);
-            transform: translate(f.rem(-10), f.rem(-110));
+            width: f.rem(280);
+            transform: translate(f.rem(-80), f.rem(-10));
         }
     }
 }
