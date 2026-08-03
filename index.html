@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <div class="loading-screen" aria-hidden="true">
+        <picture>
+            <source media="(min-width: 769px)" srcset="./images/loading.gif">
+            <img class="loading-screen__gif" src="./images/loading_spver.gif" alt="">
+        </picture>
+        <img class="loading-screen__shopname" src="./images/mainvisual_shopname.webp" alt="">
+    </div>
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">
@@ -130,9 +137,6 @@
     </header>
     <main class="main">
         <section class="mainvisual">
-            <img class="mainvisual__loading" src="./images/loading_spver.gif" data-sp-src="./images/loading_spver.gif"
-                data-pc-src="./images/loading.gif" alt="" aria-hidden="true">
-
             <picture class="mainvisual__img active">
                 <img src="./images/mainvisual1.webp" alt="">
             </picture>
