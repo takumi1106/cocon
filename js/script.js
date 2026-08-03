@@ -106,10 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const batchWidth = galleryTrack.scrollWidth;
       const firstItemWidth = measuringItems[0]?.getBoundingClientRect().width || 0;
-      const repeatsPerHalf = Math.max(
-        1,
-        Math.ceil((window.innerWidth + firstItemWidth) / batchWidth)
-      );
+      const repeatsPerHalf = batchWidth > 0
+        ? Math.max(
+            1,
+            Math.ceil((window.innerWidth + firstItemWidth) / batchWidth)
+          )
+        : 1;
       const loopItems = [];
 
       for (let half = 0; half < 2; half += 1) {
