@@ -1332,6 +1332,8 @@ body {
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center 35%;
+     object-position: center 35%;
 }
 @media (width >= 1025px) {
   .owner__picture img {
@@ -1442,10 +1444,11 @@ body {
   }
 }
 .illustrator__picture img {
-  width: 290px;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  display: block;
+  width: min(100%, 200px);
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .event {

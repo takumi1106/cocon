@@ -149,6 +149,7 @@
             width: 300px;
             height: 200px;
             object-fit: cover;
+            object-position: center 35%;
 
             @include m.mq(desktop) {
                 width: f.rem(500);
@@ -206,9 +207,10 @@
         }
 
         img {
-            width: 290px;
-            height: 200px;
-            object-fit: cover;
+            display: block;
+            width: min(100%, 200px);
+            height: auto;
+            object-fit: contain;
         }
     }
 }
