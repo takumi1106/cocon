@@ -19,6 +19,17 @@ $color-back: #9b6c4b;
         margin-top: 200px;
         background: $color-main;
         padding: 80px 0;
+
+        .footer__inner {
+            @media (width >= 768px) {
+                display: flex;
+                gap: f.rem(80);
+            }
+
+            @include m.mq(desktop) {
+                gap: f.rem(110);
+            }
+        }
     }
 
     &__map {
