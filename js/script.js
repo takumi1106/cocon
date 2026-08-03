@@ -137,6 +137,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+const instagramFeed = document.querySelector(".js-instagram-feed");
+
+if (instagramFeed) {
+  const accessToken = instagramFeed.dataset.instagramToken?.trim();
+  const apiBase = instagramFeed.dataset.instagramApiBase || "https://graph.instagram.com";
+  const userId = instagramFeed.dataset.instagramUserId || "me";
+  const limit = Number(instagramFeed.dataset.instagramLimit) || 6;
+  const profileUrl = instagramFeed.dataset.instagramProfile;
+
+  const createInstagramPost = (post) => {
+    const link = document.createElement("a");
+    const image = document.createElement("img");
+    const imageUrl = post.media_type === "VIDEO" ? post.thumbnail_url : post.media_url;
+
+    link.href = post.permalink || profileUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    image.src = imageUrl;
+    image.alt = post.caption ? `Instagram投稿: ${post.caption}` : "Instagram投稿画像";
+    image.loading = "lazy";
+
+    link.appendChild(image);
+    return link;
+  };
+
+  const loadInstagramFeed = async () => {
+    if (!accessToken) return;
+
+    const endpoint = new URL(`${apiBase.replace(/\/$/, "")}/${userId}/media`);
+    endpoint.searchParams.set("fields", "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp");
+    endpoint.searchParams.set("limit", String(limit));
+    endpoint.searchParams.set("access_token", accessToken);
+
+    try {
+      const response = await fetch(endpoint);
+
+      if (!response.ok) return;
+
+      const feed = await response.json();
+      const posts = Array.isArray(feed.data) ? feed.data : [];
+      const imagePosts = posts
+        .filter((post) => post.media_url || post.thumbnail_url)
+        .sort((first, second) => new Date(second.timestamp) - new Date(first.timestamp))
+        .slice(0, limit);
+
+      if (imagePosts.length === 0) return;
+
+      instagramFeed.replaceChildren(...imagePosts.map(createInstagramPost));
+    } catch (error) {
+      console.error("Instagram投稿の取得に失敗しました", error);
+    }
+  };
+
+  loadInstagramFeed();
+}
+
 const eventPicture = document.querySelector(".event__picture");
 const eventImages = document.querySelectorAll(".event__picture img");
 
@@ -216,6 +273,7 @@ if (mobileFadeImages.length > 0) {
 
 //メインヴィジュアル
 const slides = document.querySelectorAll(".mainvisual__img");
+const mainvisualLoading = document.querySelector(".mainvisual__loading");
 
 let current = 0;
 
@@ -226,3 +284,48 @@ setInterval(() => {
 
   slides[current].classList.add("active");
 }, 5000);
+
+if (mainvisualLoading) {
+  const loadingMediaQuery = window.matchMedia("(min-width: 769px)");
+  const loadingInterval = 2000;
+  const loadingDurations = {
+    pc: 1240,
+    sp: 2060,
+  };
+  let loadingTimer;
+
+  const getLoadingConfig = () => {
+    if (loadingMediaQuery.matches) {
+      return {
+        src: mainvisualLoading.dataset.pcSrc,
+        duration: loadingDurations.pc,
+      };
+    }
+
+    return {
+      src: mainvisualLoading.dataset.spSrc,
+      duration: loadingDurations.sp,
+    };
+  };
+
+  const playMainvisualLoading = () => {
+    const config = getLoadingConfig();
+
+    window.clearTimeout(loadingTimer);
+    mainvisualLoading.classList.remove("is-playing");
+    mainvisualLoading.removeAttribute("src");
+
+    window.requestAnimationFrame(() => {
+      mainvisualLoading.src = `${config.src}?t=${Date.now()}`;
+      mainvisualLoading.classList.add("is-playing");
+
+      loadingTimer = window.setTimeout(() => {
+        mainvisualLoading.classList.remove("is-playing");
+        loadingTimer = window.setTimeout(playMainvisualLoading, loadingInterval);
+      }, config.duration);
+    });
+  };
+
+  loadingMediaQuery.addEventListener("change", playMainvisualLoading);
+  playMainvisualLoading();
+}

@@ -20,10 +20,28 @@ body {
         height: f.rem(835);
     }
 
+    &__loading {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+
+    &__loading.is-playing {
+        opacity: 0.3;
+    }
+
     &__img {
         position: absolute;
         top: f.rem(385);
         left: 0;
+        z-index: 1;
         width: clamp(f.rem(280), 89vw, f.rem(928));
         opacity: 0;
         transition: opacity 1.2s ease;
@@ -61,7 +79,7 @@ body {
         right: f.rem(10);
         z-index: 5;
 
-        @include m.mq(desktop){
+        @include m.mq(desktop) {
             top: f.rem(135);
             right: f.rem(150);
         }
@@ -126,20 +144,26 @@ body {
         @include m.section-title();
     }
 
-    &__post {
-        margin-bottom: f.rem(30);
-        padding-bottom: f.rem(10);
-        border-bottom: solid v.$color-line 1px;
+    &_link {
+        display: block;
+        margin-bottom: f.rem(45);
+        color: inherit;
+        text-decoration: none;
 
         &:last-of-type {
             margin-bottom: 0;
         }
+    }
+
+    &__post {
+        padding-bottom: f.rem(10);
+        border-bottom: solid v.$color-line 1px;
 
         dt {
             font-size: f.rem(12);
             margin-bottom: f.rem(10);
 
-            @include m.mq(desktop){
+            @include m.mq(desktop) {
                 font-size: f.rem(14);
             }
         }
@@ -147,7 +171,7 @@ body {
         dd {
             font-size: f.rem(14);
 
-            @include m.mq(desktop){
+            @include m.mq(desktop) {
                 font-size: f.rem(16);
             }
         }
@@ -187,15 +211,27 @@ body {
         justify-content: center;
         gap: f.rem(30);
 
-        img:nth-child(n+5){
+        a {
+            display: block;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        a:nth-child(n+5) {
             display: none;
         }
 
-        @include m.mq(desktop){
-            grid-template-columns: repeat(3,f.rem(230));
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(desktop) {
+            grid-template-columns: repeat(3, f.rem(230));
             gap: f.rem(60);
 
-            img:nth-child(n+5){
+            a:nth-child(n+5) {
                 display: block;
             }
         }
