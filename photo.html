@@ -106,118 +106,119 @@
 
         </div>
     </header>
+
     <main class="main">
-    <section class="mainvisual">
-        <picture class="mainvisual__img active">
-            <img src="./images/mainvisual1.webp" alt="">
-        </picture>
+        <section class="photo-main">
+            <div class="photo-main__inner">
+                <picture class="photo-main__img">
+                    <img src="./images/mainvisual1.webp" alt="">
+                </picture>
+            </div>
+        </section>
 
-        <picture class="mainvisual__img">
-            <img src="./images/mainvisual2.webp" alt="">
-        </picture>
+        <section class="gallery">
+            <div class="gallery__track">
+                <!-- 1周目 -->
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual1_sp.webp">
+                    <img src="./images/mainvisual1.webp" alt="">
+                </picture>
 
-        <picture class="mainvisual__img">
-            <img src="./images/mainvisual3.webp" alt="">
-        </picture>
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual2_sp.webp">
+                    <img src="./images/mainvisual2.webp" alt="">
+                </picture>
 
-        <picture class="mainvisual__img">
-            <img src="./images/mainvisual4.webp" alt="">
-        </picture>
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual3_sp.webp">
+                    <img src="./images/mainvisual3.webp" alt="">
+                </picture>
 
-        <div class="mainvisual__inner">
-            <div class="mainvisual__title">
-                <div class="mainvisual__vertical">
-                    <p>西山商店街にある</p>
-                    <p>小型犬専用・完全予約制の</p>
-                    <p>貸切トリミングサロン</p>
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual4_sp.webp">
+                    <img src="./images/mainvisual4.webp" alt="">
+                </picture>
+
+                <!-- 2周目 -->
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual1_sp.webp">
+                    <img src="./images/mainvisual1.webp" alt="">
+                </picture>
+
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual2_sp.webp">
+                    <img src="./images/mainvisual2.webp" alt="">
+                </picture>
+
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual3_sp.webp">
+                    <img src="./images/mainvisual3.webp" alt="">
+                </picture>
+
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./images/mainvisual4_sp.webp">
+                    <img src="./images/mainvisual4.webp" alt="">
+                </picture>
+            </div>
+            <div class="gallery__text">
+                <p>Welcome to Cocon Dog Grooming Salon. We provide gentle grooming, careful shampoo, and relaxing treatments.</p>
+                <p aria-hidden="true">Welcome to Cocon Dog Grooming Salon. We provide gentle grooming, careful shampoo, and relaxing treatments.</p>
+                <p aria-hidden="true">Welcome to Cocon Dog Grooming Salon. We provide gentle grooming, careful shampoo, and relaxing treatments.</p>
+                <p aria-hidden="true">Welcome to Cocon Dog Grooming Salon. We provide gentle grooming, careful shampoo, and relaxing treatments.</p>
+            </div>
+        </section>
+
+        <section class="inside">
+            <div class="inside__inner">
+                <img src="./images/mainvisual_shopname.webp" alt="ショップネーム" class="inside__title">
+
+                <div class="inside__img">
+                    <img src="./images/shop-interior1.webp" alt="ショップの内装1">
+                    <img src="./images/shop-interior2.webp" alt="ショップの内装2">
                 </div>
-                <img src="./images/mainvisual_shopname.webp" alt="ショップネーム" class="mainvisual__spname">
+
+                <div class="inside__illust">
+                    <img class="inside__dog" src="./images/dog.webp" alt="イヌの線画">
+                    <img class="inside__door" src="./images/door.webp" alt="ドアの線画">
+                </div>
+            </div>
+            <img class="inside__bg" src="./images/photo-bg.webp" alt="">
+        </section>
+
+        <section class="photo-event">
+            <div class="photo-event__inner">
+                <div class="photo-event__heading">
+                    <img src="./images/event-title.webp" alt="EVENT" class="photo-event__title">
+
+                    <img src="./images/toi.webp" alt="" class="photo-event__dog">
+                </div>
+
+                <div class="photo-event__images">
+                    <img src="./images/event_img3.webp" alt="" class="photo-event__image photo-event__image--small">
+
+                    <img src="./images/event_img1.webp" alt="" class="photo-event__image photo-event__image--tilt">
+
+                    <img src="./images/event_img5.webp" alt="" class="photo-event__image photo-event__image--large">
+                </div>
+            </div>
+        </section>
+
+    <section class="album">
+        <div class="album__inner">
+            <div class="album__gallery">
+                <img class="album__item album__item--1" src="./images/event_img2.webp" alt="">
+                <img class="album__item album__item--2" src="./images/back-photo2.webp" alt="">
+                <img class="album__item album__item--3" src="./images/photo-dogs.webp" alt="">
+                <img class="album__item album__item--4" src="./images/photo-signboard.webp" alt="">
+                <img class="album__item album__item--5" src="./images/mainvisual4.webp" alt="">
+            </div>
+            <div class="album__illust">
+                <img src="./images/dogs.webp" alt="" class="album__dogs">
             </div>
         </div>
     </section>
-        <section class="news">
-            <div class="news__inner">
-                <h2 class="news__title">お知らせ</h2>
-                <article class="news__post">
-                    <dl>
-                        <dt>2026.06.06</dt>
-                        <dd>マルシェ開催します！</dd>
-                        <dd>7月7日に七夕マルシェ開催します。</dd>
-                        <dd>大好きな愛犬と写真を撮りませんか。</dd>
-                    </dl>
-                </article>
-                <article class="news__post">
-                    <dl>
-                        <dt>2026.06.06</dt>
-                        <dd>マルシェ開催します！</dd>
-                        <dd>7月7日に七夕マルシェ開催します。</dd>
-                        <dd>大好きな愛犬と写真を撮りませんか。</dd>
-                    </dl>
-                </article>
-                <article class="news__post">
-                    <dl>
-                        <dt>2026.06.06</dt>
-                        <dd>マルシェ開催します！</dd>
-                        <dd>7月7日に七夕マルシェ開催します。</dd>
-                        <dd>大好きな愛犬と写真を撮りませんか。</dd>
-                    </dl>
-                </article>
-                <!-- <div class="view">
-                    <a href="#" class="view__btn">
-                        <span class="view__text">View</span>
-
-                        <span class="view__marks">
-                            <img src="./images/view_smoll.svg" alt="" class="view__mark view__mark--small">
-                            <img src="./images/view_smoll.svg" alt="" class="view__mark view__mark--large">
-                        </span>
-                    </a>
-                </div> -->
-            </div>
-        </section>
-        <section class="menu-top">
-            <div class="menu__inner menu-top__inner">
-                <h2 class="menu-top__title">メニュー</h2>
-                <div class="slider">
-                    <button class="slider__prev">
-                        <img src="./images/left_hand.svg" alt="左ボタン">
-                    </button>
-                    <div class="slider__track">
-                        <img src="./images/menu1.webp" alt="メニュー画像1">
-                        <img src="./images/menu2.webp" alt="メニュー画像2">
-                        <img src="./images/menu1.webp" alt="メニュー画像3">
-                    </div>
-                    <button class="slider__next">
-                        <img src="./images/right_hand.svg" alt="右ボタン">
-                    </button>
-                </div>
-                <!-- <div class="view">
-                    <a href="#" class="view__in">
-                        <span class="view__btn">
-                            <span class="view__text">View</span>
-
-                            <span class="view__marks">
-                                <img src="./images/view_smoll.svg" alt="" class="view__mark view__mark--small">
-                                <img src="./images/view_smoll.svg" alt="" class="view__mark view__mark--large">
-                            </span>
-                        </span>
-                    </a>
-                </div> -->
-            </div>
-        </section>
-        <section class="insta">
-            <div class="insta__inner">
-                <h2 class="insta__title">Instagram</h2>
-                    <a class="insta__img" href="https://www.instagram.com/groomer_cocon/?hl=ja">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    <img src="./images/dummy.webp" alt="インスタ写真">
-                    </a>
-            </div>
-        </section>
     </main>
+
     <footer class="footer">
         <div class="footer__access">
             <div class="footer__inner" style="display:flex; gap:120px; ">
@@ -312,5 +313,3 @@
     </div>
     <script src="./js/script.js"></script>
 </body>
-
-</html>

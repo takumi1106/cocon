@@ -90,6 +90,49 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.hidden = !wrapper.hidden;
     });
   }
+
+  // ギャラリーを画面幅より長い2つの同一セットにして、継ぎ目なく流す
+  const galleryTrack = document.querySelector(".gallery__track");
+
+  if (galleryTrack) {
+    const templateItems = Array.from(galleryTrack.children, (item) =>
+      item.cloneNode(true)
+    );
+    let galleryResizeTimer;
+
+    const buildGalleryLoop = () => {
+      const measuringItems = templateItems.map((item) => item.cloneNode(true));
+      galleryTrack.replaceChildren(...measuringItems);
+
+      const batchWidth = galleryTrack.scrollWidth;
+      const firstItemWidth = measuringItems[0]?.getBoundingClientRect().width || 0;
+      const repeatsPerHalf = Math.max(
+        1,
+        Math.ceil((window.innerWidth + firstItemWidth) / batchWidth)
+      );
+      const loopItems = [];
+
+      for (let half = 0; half < 2; half += 1) {
+        for (let repeat = 0; repeat < repeatsPerHalf; repeat += 1) {
+          templateItems.forEach((item) => {
+            const clone = item.cloneNode(true);
+
+            if (half === 1 || repeat > 0) clone.setAttribute("aria-hidden", "true");
+            loopItems.push(clone);
+          });
+        }
+      }
+
+      galleryTrack.replaceChildren(...loopItems);
+    };
+
+    buildGalleryLoop();
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(galleryResizeTimer);
+      galleryResizeTimer = window.setTimeout(buildGalleryLoop, 150);
+    });
+  }
 });
 
 const eventPicture = document.querySelector(".event__picture");

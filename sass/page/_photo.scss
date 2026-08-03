@@ -1,0 +1,466 @@
+@use '../foundation/function' as f;
+@use '../foundation/mixin' as m;
+@use '../foundation/var' as v;
+
+.photo-main {
+    margin-top: f.rem(105);
+    height: calc(100svh - f.rem(105));
+
+    &__inner,
+    &__img,
+    &__img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.gallery {
+    --gallery-gap: #{f.rem(16)};
+    --gallery-gap-half: #{f.rem(8)};
+    overflow: hidden;
+    margin: f.rem(100) 0 f.rem(70);
+
+    &__track {
+        display: flex;
+        width: max-content;
+        gap: var(--gallery-gap);
+        animation: gallery-scroll 20s linear infinite;
+        background-color: v.$color-main;
+        padding-block: f.rem(12);
+
+        @include m.mq(tablet){
+            padding-block: f.rem(24);
+        }
+
+        @include m.mq(desktop){
+            padding-block: f.rem(30);
+        }
+    }
+
+    &__text {
+        display: flex;
+        width: max-content;
+        margin-top: f.rem(16);
+        animation: gallery-text-scroll 20s linear infinite;
+
+        p {
+            flex-shrink: 0;
+            padding-right: f.rem(25);
+            white-space: nowrap;
+            font-size: clamp(f.rem(16), 4vw, f.rem(24));
+        }
+    }
+
+    img {
+        width: f.rem(172);
+        height: f.rem(114);
+        object-fit: cover;
+        flex-shrink: 0;
+
+        @include m.mq(tablet) {
+            width: f.rem(240);
+            height: f.rem(160);
+        }
+
+        @include m.mq(desktop) {
+            width: f.rem(300);
+            height: f.rem(200);
+        }
+    }
+
+    @include m.mq(tablet) {
+        --gallery-gap: #{f.rem(24)};
+        --gallery-gap-half: #{f.rem(12)};
+    }
+
+    @include m.mq(desktop) {
+        --gallery-gap: #{f.rem(32)};
+        --gallery-gap-half: #{f.rem(16)};
+        margin: f.rem(150) 0 f.rem(80);
+    }
+}
+
+@keyframes gallery-text-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes gallery-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - var(--gallery-gap-half)));
+    }
+}
+
+.inside {
+    &__inner {
+        @include m.inner();
+        margin-bottom: f.rem(30);
+    }
+
+    &__title {
+        display: block;
+        width: f.rem(190);
+        margin: 0 auto f.rem(40);
+    }
+
+    &__img {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(40);
+        margin-bottom: f.rem(40);
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__illust {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: f.rem(56);
+        margin-top: f.rem(30);
+    }
+
+    &__dog {
+        width: f.rem(110);
+    }
+
+    &__door {
+        width: f.rem(100);
+    }
+
+    &__bg {
+        display: block;
+        width: 100%;
+        height: f.rem(50);
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.85;
+    }
+
+        @include m.mq(tablet) {
+            position: relative;
+
+            &__inner {
+                @include m.inner();
+                position: relative;
+                height: f.rem(580); // 必要な高さを確保
+                margin-bottom: f.rem(60);
+            }
+
+            &__title {
+                position: absolute;
+                top: 0;
+                left: 25%;
+                transform: translateX(-50%);
+                width: f.rem(215);
+            }
+
+            &__img img:first-child {
+                position: absolute;
+                left: 8%;
+                top: f.rem(225);
+                width: min(40vw, f.rem(340));
+                height: auto;
+            }
+
+            &__img img:last-child {
+                position: absolute;
+                right: 8%;
+                top: f.rem(40);
+                width: min(40vw, f.rem(340));
+                height: auto;
+            }
+
+            &__dog {
+                position: absolute;
+                right: 30%;
+                top: f.rem(400);
+                width: f.rem(130);
+            }
+
+            &__door {
+                position: absolute;
+                right: f.rem(120);
+                top: f.rem(350);
+                width: f.rem(105);
+            }
+
+            &__bg {
+                width: 100%;
+                height: f.rem(100);
+                object-fit: cover;
+                object-position: center;
+                opacity: 0.85;
+            }
+        }
+
+        @include m.mq(desktop) {
+            position: relative;
+
+            &__inner {
+                @include m.inner();
+                position: relative;
+                height: f.rem(650); // 必要な高さを確保
+                margin-bottom: f.rem(60);
+            }
+
+            &__title {
+                position: absolute;
+                top: 0;
+                left: 25%;
+                transform: translateX(-50%);
+                width: f.rem(245);
+            }
+
+            &__img img:first-child {
+                position: absolute;
+                left: 8%;
+                top: f.rem(225);
+                width: min(40vw, f.rem(423));
+                height: auto;
+            }
+
+            &__img img:last-child {
+                position: absolute;
+                right: 8%;
+                top: f.rem(40);
+                width: min(40vw, f.rem(423));
+                height: auto;
+            }
+
+            &__dog {
+                position: absolute;
+                right: 30%;
+                top: f.rem(440);
+                width: f.rem(160);
+            }
+
+            &__door {
+                position: absolute;
+                right: f.rem(120);
+                top: f.rem(350);
+                width: f.rem(145);
+            }
+
+            &__bg {
+                width: 100%;
+                height: f.rem(150);
+                object-fit: cover;
+                object-position: center;
+                opacity: 0.85;
+            }
+        }
+}
+
+.photo-event {
+    margin-bottom: f.rem(100);
+
+    &__inner {
+        @include m.inner();
+        position: relative;
+        height: f.rem(990);
+    }
+
+    &__title {
+        position: absolute;
+        width: f.rem(145);
+        top: f.rem(40);
+        left: 0;
+    }
+
+    &__dog {
+        position: absolute;
+        width: f.rem(120);
+        top: f.rem(150);
+        left: 5%;
+    }
+
+    &__image {
+        position: absolute;
+    }
+
+    &__image--small {
+        width: f.rem(180);
+        top: f.rem(100);
+        left: 49%;
+    }
+
+    &__image--tilt {
+        width: f.rem(273);
+        top: f.rem(330);
+        left: 12%;
+        transform: rotate(-12deg);
+    }
+
+    &__image--large {
+        width: f.rem(265);
+        bottom:0;
+        right:10%;
+    }
+
+    @include m.mq(tablet){
+        &__inner {
+            height: f.rem(770);
+        }
+
+        &__title{
+            width: f.rem(280);
+            top: f.rem(90);
+            left: 7%;
+        }
+
+        &__dog{
+            width: f.rem(140);
+            top: f.rem(240);
+            left: 2%;
+        }
+
+        &__image--small{
+            width: f.rem(220);
+            top: f.rem(240);
+            left: 26%;
+        }
+
+        &__image--tilt{
+            width: f.rem(350);
+            top: f.rem(500);
+            left: 7%;
+        }
+
+        &__image--large {
+            width: f.rem(315);
+            bottom: f.rem(90);
+            right: 5%;
+        }
+    }
+
+    @include m.mq(desktop) {
+        &__inner {
+            height: f.rem(860);
+        }
+
+        &__title {
+            width: f.rem(360);
+            top: f.rem(90);
+            left: 7%;
+        }
+
+        &__dog {
+            width: f.rem(160);
+            top: f.rem(270);
+            left: 0;
+        }
+
+        &__image--small {
+            width: f.rem(270);
+            top: f.rem(260);
+            left: 22%;
+        }
+
+        &__image--tilt {
+            width: f.rem(410);
+            top: f.rem(560);
+            left: 5%;
+        }
+
+        &__image--large {
+            width: f.rem(385);
+            bottom: f.rem(100);
+        }
+    }
+}
+
+.album {
+    background-color: v.$color-line;
+    padding: f.rem(60) 0;
+
+    &__inner {
+        @include m.inner();
+        position: relative;
+    }
+
+    &__gallery {
+        display: grid;
+        gap: f.rem(35);
+    }
+
+    &__item {
+        width: 100%;
+        display: block;
+        object-fit: cover; // ←これが重要
+    }
+
+    &__item--1,
+    &__item--2,
+    &__item--4,
+    &__item--5 {
+        height: f.rem(270);
+    }
+
+    &__item--3 {
+        height: f.rem(480); // 例：縦長の写真
+    }
+
+    &__dogs{
+        position: absolute;
+        width: f.rem(180);
+        right: 0;
+        bottom: f.rem(-140);
+    }
+
+    @include m.mq(tablet){
+        padding: f.rem(90) 0;
+
+        &__gallery {
+            grid-template-columns: repeat(3, 1fr);
+            gap: f.rem(25);
+        }
+
+        &__item--3 {
+            grid-column: 2;
+            grid-row: 1 / 3;
+            height: 100%;
+        }
+
+        &__dogs {
+            position: absolute;
+            width: f.rem(270);
+            right: 0;
+            bottom: f.rem(-200);
+        }
+    }
+
+    @include m.mq(desktop){
+        padding: f.rem(130) 0;
+
+        &__gallery {
+            grid-template-columns: repeat(3, 1fr);
+            gap: f.rem(35);
+        }
+
+        &__dogs {
+            position: absolute;
+            width: f.rem(390);
+            right: 0;
+            bottom: f.rem(-300);
+        }
+    }
+}
