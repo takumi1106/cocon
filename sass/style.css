@@ -1582,6 +1582,7 @@ body {
 .ques__toggle {
   flex-shrink: 0;
   cursor: pointer;
+  transform: rotate(90deg);
 }
 .ques__icon {
   width: 1.875rem;
