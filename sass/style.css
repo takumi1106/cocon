@@ -662,23 +662,29 @@
 .slider__track::-webkit-scrollbar {
   display: none;
 }
-@media (width >= 1025px) {
+@media (width >= 769px) {
   .slider__track {
     width: 100%;
     overflow: visible;
     justify-content: center;
+    scroll-snap-type: none;
   }
 }
 .slider__track img {
   flex-shrink: 0;
-  width: 12.5rem;
+  width: 15.625rem;
   border-radius: 0.625rem;
   scroll-snap-align: center;
   cursor: pointer;
 }
+@media (width >= 769px) {
+  .slider__track img {
+    width: 21.875rem;
+  }
+}
 @media (width >= 1025px) {
   .slider__track img {
-    width: 19.0625rem;
+    width: 25rem;
   }
 }
 .slider__prev, .slider__next {
@@ -690,7 +696,7 @@
   border: none;
   cursor: pointer;
 }
-@media (width >= 1025px) {
+@media (width >= 768px) {
   .slider__prev, .slider__next {
     display: none;
   }
