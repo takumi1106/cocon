@@ -293,6 +293,17 @@
   background: #FBF0E3;
   padding: 80px 0;
 }
+@media (width >= 768px) {
+  .footer__access .footer__inner {
+    display: flex;
+    gap: 5rem;
+  }
+}
+@media (width >= 1025px) {
+  .footer__access .footer__inner {
+    gap: 6.875rem;
+  }
+}
 .footer__map {
   flex-shrink: 0;
 }
