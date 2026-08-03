@@ -3,63 +3,63 @@
 @use '../foundation/var' as v;
 // @use '../foundation/function' as f;
 
-.sub-title{
+.sub-title {
     @include m.section-title();
 }
 
-.qs-box{
+.qs-box {
     @include m.ques();
 }
 
-.menu{
+.menu {
     margin: f.rem(180) auto f.rem(150);
 
     @include m.mq(desktop) {
         margin-top: f.rem(160);
     }
 
-    &__inner{
+    &__inner {
         @include m.inner();
     }
 
-    &__title{
+    &__title {
         @include m.section-title();
     }
 
-        &__slider {
-            display: flex;
-            overflow: hidden;
-            scroll-behavior: smooth;
-            gap: f.rem(32);
-            width: f.rem(200);
-            margin: f.rem(230) auto 0;
-        }
+    &__slider {
+        display: flex;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        gap: f.rem(32);
+        width: f.rem(200);
+        margin: f.rem(230) auto 0;
+    }
 
-        &__slider img {
-            flex-shrink: 0;
-            width: 200px;
-            border-radius: 10px;
-        }
+    &__slider img {
+        flex-shrink: 0;
+        width: 200px;
+        border-radius: 10px;
+    }
 
-        &__prev,
-        &__next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: f.rem(48);
-            height: f.rem(48);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: f.rem(48);
+        height: f.rem(48);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 
-        &__prev {
-            left: f.rem(-6);
-        }
+    &__prev {
+        left: f.rem(-6);
+    }
 
-        &__next {
-            right: f.rem(-6);
-        }
+    &__next {
+        right: f.rem(-6);
+    }
 }
 
 .ques {
@@ -67,8 +67,8 @@
         @include m.inner();
     }
 
-    &__open{
-            width: 50px;
+    &__open {
+        width: 50px;
     }
 
     &__box {
