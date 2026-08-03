@@ -30,7 +30,7 @@
         display: flex;
         width: max-content;
         gap: var(--gallery-gap);
-        animation: gallery-scroll 34s linear infinite;
+        animation: gallery-scroll 38s linear infinite;
         background-color: v.$color-main;
         padding-block: f.rem(12);
 
@@ -47,7 +47,7 @@
         display: flex;
         width: max-content;
         margin-top: f.rem(16);
-        animation: gallery-text-scroll 34s linear infinite;
+        animation: gallery-text-scroll 55s linear infinite;
 
         p {
             flex-shrink: 0;
@@ -152,7 +152,7 @@
         height: f.rem(50);
         object-fit: cover;
         object-position: center;
-        opacity: 0.85;
+        opacity: 0.7;
     }
 
         @include m.mq(tablet) {
@@ -208,7 +208,7 @@
                 height: f.rem(100);
                 object-fit: cover;
                 object-position: center;
-                opacity: 0.85;
+                opacity: 0.7;
             }
         }
 
@@ -265,7 +265,7 @@
                 height: f.rem(150);
                 object-fit: cover;
                 object-position: center;
-                opacity: 0.85;
+                opacity: 0.7;
             }
         }
 }
@@ -361,30 +361,31 @@
         &__title {
             width: f.rem(360);
             top: f.rem(90);
-            left: 7%;
+            left: 9%;
         }
 
         &__dog {
             width: f.rem(160);
             top: f.rem(270);
-            left: 0;
+            left: 2%;
         }
 
         &__image--small {
             width: f.rem(270);
             top: f.rem(260);
-            left: 22%;
+            left: 24%;
         }
 
         &__image--tilt {
             width: f.rem(410);
             top: f.rem(560);
-            left: 5%;
+            left: 7%;
         }
 
         &__image--large {
             width: f.rem(385);
             bottom: f.rem(100);
+            right: 12%;
         }
     }
 }

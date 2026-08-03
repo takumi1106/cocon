@@ -1948,7 +1948,7 @@ li {
   width: -moz-max-content;
   width: max-content;
   gap: var(--gallery-gap);
-  animation: gallery-scroll 34s linear infinite;
+  animation: gallery-scroll 38s linear infinite;
   background-color: #FBF0E3;
   padding-block: 0.75rem;
 }
@@ -1967,7 +1967,7 @@ li {
   width: -moz-max-content;
   width: max-content;
   margin-top: 1rem;
-  animation: gallery-text-scroll 34s linear infinite;
+  animation: gallery-text-scroll 55s linear infinite;
 }
 .gallery__text p {
   flex-shrink: 0;
@@ -2067,7 +2067,7 @@ li {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  opacity: 0.85;
+  opacity: 0.7;
 }
 @media (width >= 769px) {
   .inside {
@@ -2122,7 +2122,7 @@ li {
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
-    opacity: 0.85;
+    opacity: 0.7;
   }
 }
 @media (width >= 1025px) {
@@ -2178,7 +2178,7 @@ li {
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
-    opacity: 0.85;
+    opacity: 0.7;
   }
 }
 
@@ -2262,26 +2262,27 @@ li {
   .photo-event__title {
     width: 22.5rem;
     top: 5.625rem;
-    left: 7%;
+    left: 9%;
   }
   .photo-event__dog {
     width: 10rem;
     top: 16.875rem;
-    left: 0;
+    left: 2%;
   }
   .photo-event__image--small {
     width: 16.875rem;
     top: 16.25rem;
-    left: 22%;
+    left: 24%;
   }
   .photo-event__image--tilt {
     width: 25.625rem;
     top: 35rem;
-    left: 5%;
+    left: 7%;
   }
   .photo-event__image--large {
     width: 24.0625rem;
     bottom: 6.25rem;
+    right: 12%;
   }
 }
 
