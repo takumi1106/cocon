@@ -277,13 +277,20 @@ const mainvisualLoading = document.querySelector(".mainvisual__loading");
 
 let current = 0;
 
-setInterval(() => {
-  slides[current].classList.remove("active");
+if (slides.length > 1) {
+  setInterval(() => {
+    const previousSlide = slides[current];
+    previousSlide.classList.add("is-leaving");
 
-  current = (current + 1) % slides.length;
+    current = (current + 1) % slides.length;
+    const nextSlide = slides[current];
+    nextSlide.classList.add("active");
 
-  slides[current].classList.add("active");
-}, 5000);
+    window.setTimeout(() => {
+      previousSlide.classList.remove("active", "is-leaving");
+    }, 1200);
+  }, 5000);
+}
 
 if (mainvisualLoading) {
   const loadingMediaQuery = window.matchMedia("(min-width: 769px)");

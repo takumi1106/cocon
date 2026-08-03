@@ -54,6 +54,12 @@ body {
         }
 
         &.active {
+            z-index: 2;
+            opacity: 1;
+        }
+
+        &.active.is-leaving {
+            z-index: 1;
             opacity: 1;
         }
 
@@ -227,11 +233,20 @@ body {
             object-fit: cover;
         }
 
-        @include m.mq(desktop) {
-            grid-template-columns: repeat(3, f.rem(230));
-            gap: f.rem(60);
+        @media (width >= 768px) {
+            grid-template-columns: repeat(3, minmax(0, f.rem(200)));
+            gap: f.rem(30);
 
-            a:nth-child(n+5) {
+            a:nth-child(-n+6) {
+                display: block;
+            }
+        }
+
+        @include m.mq(desktop) {
+            grid-template-columns: repeat(4, minmax(0, f.rem(230)));
+            gap: f.rem(40);
+
+            a:nth-child(-n+8) {
                 display: block;
             }
         }
