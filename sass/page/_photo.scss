@@ -30,7 +30,7 @@
         display: flex;
         width: max-content;
         gap: var(--gallery-gap);
-        animation: gallery-scroll 20s linear infinite;
+        animation: gallery-scroll 34s linear infinite;
         background-color: v.$color-main;
         padding-block: f.rem(12);
 
@@ -47,7 +47,7 @@
         display: flex;
         width: max-content;
         margin-top: f.rem(16);
-        animation: gallery-text-scroll 20s linear infinite;
+        animation: gallery-text-scroll 34s linear infinite;
 
         p {
             flex-shrink: 0;
@@ -289,8 +289,9 @@
     &__dog {
         position: absolute;
         width: f.rem(120);
-        top: f.rem(150);
+        top: f.rem(120);
         left: 5%;
+        transform: rotate(-15deg);
     }
 
     &__image {
@@ -389,12 +390,22 @@
 }
 
 .album {
-    background-color: v.$color-line;
+    position: relative;
     padding: f.rem(60) 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("../images/back.webp") no-repeat center / cover;
+        opacity: 0.3;
+        pointer-events: none;
+    }
 
     &__inner {
         @include m.inner();
         position: relative;
+        z-index: 1;
     }
 
     &__gallery {

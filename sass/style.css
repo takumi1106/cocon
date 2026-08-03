@@ -1870,7 +1870,7 @@ li {
   width: -moz-max-content;
   width: max-content;
   gap: var(--gallery-gap);
-  animation: gallery-scroll 20s linear infinite;
+  animation: gallery-scroll 34s linear infinite;
   background-color: #FBF0E3;
   padding-block: 0.75rem;
 }
@@ -1889,7 +1889,7 @@ li {
   width: -moz-max-content;
   width: max-content;
   margin-top: 1rem;
-  animation: gallery-text-scroll 20s linear infinite;
+  animation: gallery-text-scroll 34s linear infinite;
 }
 .gallery__text p {
   flex-shrink: 0;
@@ -2124,8 +2124,9 @@ li {
 .photo-event__dog {
   position: absolute;
   width: 7.5rem;
-  top: 9.375rem;
+  top: 7.5rem;
   left: 5%;
+  transform: rotate(-15deg);
 }
 .photo-event__image {
   position: absolute;
@@ -2207,8 +2208,16 @@ li {
 }
 
 .album {
-  background-color: #FFE9DA;
+  position: relative;
   padding: 3.75rem 0;
+}
+.album::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/back.webp") no-repeat center/cover;
+  opacity: 0.3;
+  pointer-events: none;
 }
 .album__inner {
   max-width: 1200px;
@@ -2216,6 +2225,7 @@ li {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  z-index: 1;
 }
 .album__gallery {
   display: grid;
