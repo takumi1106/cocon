@@ -112,6 +112,10 @@
                 transition-delay: .4s;
             }
 
+            .header_nav__list li:nth-child(5) {
+                transition-delay: .5s;
+            }
+
         }
 
     }
@@ -210,7 +214,7 @@
     }
 
     // 横位置
-    @for $i from 1 through 10 {
+    @for $i from 1 through 12 {
 
         img:nth-child(#{$i}) {
             left: #{($i - 1) * 16}px;
@@ -236,7 +240,11 @@
     width: f.rem(156);
 }
 
-@for $i from 1 through 10 {
+.paw--12 .paw {
+    width: f.rem(188);
+}
+
+@for $i from 1 through 12 {
 
     .header_nav__list a:hover .paw img:nth-child(#{$i}) {
 
