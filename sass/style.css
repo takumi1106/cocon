@@ -702,8 +702,10 @@ body {
   z-index: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
@@ -924,7 +926,8 @@ body {
 .insta__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (width >= 1025px) {
   .insta__img {
