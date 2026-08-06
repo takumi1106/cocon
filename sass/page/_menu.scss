@@ -63,6 +63,7 @@
 }
 
 .ques {
+    //width: f.rem(30);
     &__inner {
         @include m.inner();
     }
@@ -94,5 +95,9 @@
 
     &__icon {
         width: f.rem(30);
+    }
+
+    &__icon.is-open {
+        transform: rotate(180deg);
     }
 }
