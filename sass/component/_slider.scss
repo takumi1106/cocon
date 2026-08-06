@@ -20,22 +20,27 @@
             display: none;
         }
 
-        @include m.mq(desktop) {
+        @include m.mq(tablet) {
             width: 100%;
             overflow: visible;
             justify-content: center;
+            scroll-snap-type: none;
         }
     }
 
     &__track img {
         flex-shrink: 0;
-        width: f.rem(200);
+        width: f.rem(250);
         border-radius: f.rem(10);
         scroll-snap-align: center;
         cursor: pointer;
 
+        @include m.mq(tablet) {
+            width: f.rem(350);
+        }
+
         @include m.mq(desktop) {
-            width: f.rem(305);
+            width: f.rem(400);
         }
     }
 
@@ -49,7 +54,7 @@
         border: none;
         cursor: pointer;
 
-        @include m.mq(desktop) {
+        @media (width >= 768px) {
             display: none;
         }
     }
