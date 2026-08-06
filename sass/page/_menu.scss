@@ -101,3 +101,16 @@
         transform: rotate(180deg);
     }
 }
+
+.ques__toggle {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.ques__icon {
+    width: f.rem(30);
+}
+
+.ques__icon.is-open {
+    transform: rotate(180deg);
+}

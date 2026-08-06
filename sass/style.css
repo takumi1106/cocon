@@ -1719,6 +1719,19 @@ body {
   transform: rotate(180deg);
 }
 
+.ques__toggle {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.ques__icon {
+  width: 1.875rem;
+}
+
+.ques__icon.is-open {
+  transform: rotate(180deg);
+}
+
 .sub-title {
   font-size: 2rem;
   font-family: "Hiragino Mincho Pro";
