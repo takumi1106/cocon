@@ -74,9 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => {
       const box = toggle.closest(".ques__box");
       const answer = box?.querySelector(".ques__answer");
+      const icon = toggle.querySelector(".ques__icon");
 
       if (answer) {
         answer.hidden = !answer.hidden;
+
+        // 回転
+        icon.classList.toggle("is-open", !answer.hidden);
       }
     });
   });
@@ -108,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const firstItemWidth = measuringItems[0]?.getBoundingClientRect().width || 0;
       const repeatsPerHalf = batchWidth > 0
         ? Math.max(
-            1,
-            Math.ceil((window.innerWidth + firstItemWidth) / batchWidth)
-          )
+          1,
+          Math.ceil((window.innerWidth + firstItemWidth) / batchWidth)
+        )
         : 1;
       const loopItems = [];
 
